@@ -1,0 +1,34 @@
+<template name="polllist">
+	{{#contentFor "headerTitle"}}
+	<h1 class="title">Feedback</h1>
+	{{/contentFor}}
+
+
+	{{#ionView}}
+	{{#ionContent}}
+	<div class="list">
+		{{#each getpollquestions}}
+		{{> pollitems}}
+		{{/each}}
+	</div>
+	{{/ionContent}}
+	{{/ionView}}
+</template>
+
+<template name="pollitems">
+
+
+	<!-- <a class="item item-avatar pollitem" id={{_id}}  >
+		<img src="../img/attendee1.jpg">
+		<h2 class="textleft">{{title}}</h2>		
+		{{> ionIcon icon="ios-arrow-forward" class="positive"}}
+	</a> -->
+
+	 {{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right"}}
+            <img src="./img/attendee1.jpg">
+            {{title}} 
+            {{> ionIcon icon="ios-arrow-forward" class="positive"}}
+          {{/ionItem}}
+
+
+</template>

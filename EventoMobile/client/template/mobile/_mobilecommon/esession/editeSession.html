@@ -1,0 +1,18 @@
+<template name="editeSession">
+	{{#contentFor "headerTitle"}}
+	<div class="row">
+		<div>
+			<img src="../img/logo.jpg" height="20px" width="20px" class="img-responsive" style="margin-left: 40px;">
+		</div>
+		<div >
+			<h1 class="title">Edit	 Sessions</h1>
+		</div>
+	</div>
+	{{/contentFor}}
+
+	{{#ionView}}
+	{{#ionContent}}
+ {{> quickForm collection="eSessions" id="editeSession" type="update" doc=this		}}
+ {{/ionContent}}
+{{/ionView}}
+</template>

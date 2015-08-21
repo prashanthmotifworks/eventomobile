@@ -1,0 +1,52 @@
+<template name="eventdetail">
+	{{#contentFor "headerTitle"}}
+  <h1 class="title">Event Info 
+  </h1>
+  
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent class="padding contact-detail"}}
+      {{# each getEventInfo}}
+        <div class="list card">
+
+          <div class="item item-avatar">
+            <img src="../img/attendee1.jpg">
+            <button id={{_id}} class=" icon ion-gear-a editevent"></button>
+            <h2>{{title}} </h2>
+            <p>{{venuename}}</p>
+          </div>
+
+          <div class="item item-body">
+           
+
+            <h4>Timings :</h4>
+            <p>{{ prettifyDate starttime}} to {{ prettifyDate endtime}}</p>
+
+            <h4>Address</h4>
+            <p>{{address}} </p>
+            <p>{{description}} </p>
+            
+          </div>
+
+          <!-- <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#" data-action="fake">
+              <i class="icon ion-email"></i>
+              Send Email
+            </a>
+            <a class="tab-item" href="#" data-action="fake">
+              <i class="icon ion-iphone"></i>
+              Call
+            </a>
+            <a class="tab-item" href="#" data-action="fake">
+              <i class="icon ion-share"></i>
+              Share
+            </a>
+          </div> -->
+
+        </div>
+        {{/each}}
+     
+    {{/ionContent}}
+  {{/ionView}}
+</template>

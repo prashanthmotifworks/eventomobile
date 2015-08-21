@@ -1,0 +1,29 @@
+<template name="speakerlist">
+
+	{{#contentFor "headerTitle"}}
+	<h1 class="title">Speakers</h1>
+	{{/contentFor}}
+	{{#ionView}}
+	{{#ionContent}}
+	<a class="addspeaker" id="addspeaker"><img src="../img/icons/add.png" width="40px" height="40px" class="imageborder img-responsive"></a>		
+
+	<div class="list">	
+    {{#each getspeakers}}
+			{{> speakeritems}}	
+	{{/each}}
+	</div>
+	{{/ionContent}}
+	{{/ionView}}
+</template>
+
+
+<template name="speakeritems"> 
+     <div id={{_id}} class="speakeritem">
+    {{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right "}}
+            <img src="../img/attendee1.jpg">
+            {{fname}} {{lname}}<br/>	
+            {{designation}}-{{department}}
+            {{> ionIcon icon="ios-arrow-forward" class="positive"}}
+          {{/ionItem}}
+          </div>   
+</template>

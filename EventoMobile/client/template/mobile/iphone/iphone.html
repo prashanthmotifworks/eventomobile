@@ -1,0 +1,43 @@
+<template name="iphone">
+
+{{> navbar}}
+
+	<div class="row">
+
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+        
+
+	<div class="pull-left full responsive-container" id="iphone" style="opacity: 1;">
+		<div class="device-wrapper port" id="iphone6plus" style="position: relative; margin: 0px;">
+			<h3 class="pull-left full align-center">iPhone 6 Plus</h3>
+			<div class="device show" style="width: 308.624868895245px;">
+				<img alt="Iphone-6-plus-port" class="unit img-responsive" src="https://d3but80xmlhqzj.cloudfront.net/production/images/layout/devices/iPhone-6-plus-port.png?1439469554">
+
+				<div class="pull-left full screen-wrapper" style="position: absolute; display: block; top: 91.8126919183275px; bottom: auto; left: 20.7396176357647px; width: 268.817351663565px; height: 461.536260155902px;">
+					<div class="pull-left full screen" style="width: 268.817351663565px;">
+						<div class="device-topbar" style="width: 268.817351663565px;">							
+						</div>
+						<div class="device-ss-container" style="width: 268.817351663565px;overflow-y: hidden;overflow-x: hidden;">
+						 {{> ionNavBar class="bar-stable"}}
+  {{#contentFor "headerButtonLeft"}}
+  <button class="button button-clear pull-left button-positive" data-ion-modal="search">
+    {{>ionNavBackButton class="button-positive" text=false}}
+  </button>
+  {{/contentFor}}
+							
+								{{> yield}}
+							
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div></div>
+</div>
+         <div class="col-sm-4"></div>
+   </div>
+
+
+	</template>

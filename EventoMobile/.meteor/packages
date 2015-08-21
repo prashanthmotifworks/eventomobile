@@ -1,0 +1,30 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+meteor-platform
+autopublish
+insecure
+
+mizzao:bootstrap-3
+mrt:bootstrap-3
+iron:router
+aldeed:simple-schema
+aldeed:collection2
+aldeed:autoform
+lepozepo:s3
+
+meteoric:ionic-sass
+
+meteoric:ionic
+#meteoric:autoform-ionic
+u2622:persistent-session
+fourseven:scss@2.0.0
+meteoric:ionicons-sass
+lookback:logger
+
+aldeed:autoform-bs-datetimepicker
+tsega:bootstrap3-datetimepicker@=3.1.3_3
+notorii:autoform-datetimepicker
+matb33:collection-hooks

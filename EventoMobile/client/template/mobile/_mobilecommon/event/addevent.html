@@ -1,0 +1,60 @@
+<template name="addevent">
+
+	{{#contentFor "headerTitle"}}
+	<div class="row">
+		<div>
+			<img src="../img/logo.jpg" height="20px" width="20px" class="img-responsive" style="margin-left: 40px;">
+		</div>
+		<div >
+			<h1 class="title">Add Event</h1>
+		</div>
+	</div>
+	{{/contentFor}}
+
+	{{#ionView}}
+	{{#ionContent}}
+
+	
+
+	
+
+<!-- 	 <div class="list">
+		<label class="item item-input">			
+			<input type="text" placeholder="Event Name">
+		</label>
+		<label >
+			<textarea rows="3" placeholder="Description"></textarea>
+		</label>
+		<label >			
+			<input type="text" placeholder="Venue">
+		</label>
+
+		<label >
+			<textarea rows="3" placeholder="Address"></textarea>
+		</label>
+
+		<button class="button button-block button-positive">Submit</button>
+		
+	</div> -->
+
+
+<!-- <div class="list"> -->
+<!-- 	{{#autoForm collection="Eventos" id="insertEventosForm" type="insert"}}
+	<fieldset>
+		
+		<label >{{> afQuickField name='title' placeholder="Event Name" }}</label>
+		<label >{{> afQuickField name='description' rows=3 placeholder="Description" }}</label>
+		<label >{{> afQuickField name='venuename'  placeholder="Venue" }}</label>
+		<label >{{> afQuickField name='address' rows=3 placeholder="Address" }}</label>
+
+	</fieldset>
+	<button type="submit" class=" button button-block button-positive">Add Event</button>
+	{{/autoForm}} -->
+<!-- </div> -->
+
+ {{> quickForm collection="Eventos" id="insertEventoForm" type="insert"}}
+
+
+{{/ionContent}}
+{{/ionView}}
+</template>

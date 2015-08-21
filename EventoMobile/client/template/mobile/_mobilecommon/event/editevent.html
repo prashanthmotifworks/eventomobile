@@ -1,0 +1,18 @@
+<template name="editevent">
+	{{#contentFor "headerTitle"}}
+	<div class="row">
+		<div>
+			<img src="../img/logo.jpg" height="20px" width="20px" class="img-responsive" style="margin-left: 40px;">
+		</div>
+		<div >
+			<h1 class="title">Edit	 Event</h1>
+		</div>
+	</div>
+	{{/contentFor}}
+
+	{{#ionView}}
+	{{#ionContent}}
+ {{> quickForm collection="Eventos" id="editevent" type="update" doc=this		}}
+ {{/ionContent}}
+{{/ionView}}
+</template>

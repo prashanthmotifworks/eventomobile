@@ -1,0 +1,69 @@
+<template name="esessiondetail">
+	{{#contentFor "headerTitle"}}
+  <h1 class="title">Session Info 	
+  </h1>
+
+
+
+
+  
+  
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent class="padding contact-detail"}}
+      {{# each getSessionInfo}}
+        <div class="list card">
+
+          <div class="item item-avatar">
+            <img src="../img/attendee1.jpg">
+            <h2>{{title}} </h2>
+             <button id={{_id}} class="button icon ion-gear-a editsession"></button>
+            
+            
+          </div>
+
+          <div class="item item-body">
+           
+
+            <h4>Timings :</h4>
+            <p>{{ prettifyDate starttime}} to {{ prettifyDate endtime}}</p>
+
+            <h4>Address:</h4>
+            <p>{{address}} </p>
+
+            <p>{{description}} </p>
+
+            <h4>Speakers:</h4>
+            {{#each speaker}}
+             {{getSpeakerInfo this}}<br/>
+             {{/each}}
+
+              <h4>Attendees:</h4>
+            {{#each attendee}}
+             {{getAttendeeInfo this}} <br/>
+              {{/each}}
+            
+          </div>
+
+          <!-- <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#" data-action="fake">
+              <i class="icon ion-email"></i>
+              Send Email
+            </a>
+            <a class="tab-item" href="#" data-action="fake">
+              <i class="icon ion-iphone"></i>
+              Call
+            </a>
+            <a class="tab-item" href="#" data-action="fake">
+              <i class="icon ion-share"></i>
+              Share
+            </a>
+          </div> -->
+
+        </div>
+        {{/each}}
+     
+    {{/ionContent}}
+  {{/ionView}}
+</template>

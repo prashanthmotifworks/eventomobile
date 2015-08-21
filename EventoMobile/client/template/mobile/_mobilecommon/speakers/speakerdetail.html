@@ -1,0 +1,49 @@
+<template name="speakerdetail">
+	  {{#contentFor "headerTitle"}}
+  <h1 class="title">Speaker Info 
+  </h1>
+  
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent class="padding contact-detail"}}
+      {{# each getspeakerdetail}}
+        <div class="list card">
+
+          <div class="item item-avatar">
+            <img src="../img/attendee1.jpg">
+            <h2>{{fname}} {{lname}}</h2>
+            <p>{{designation}}, {{department}}</p>
+          </div>
+
+          <div class="item item-body">
+           
+
+            <h4>Contact info</h4>
+            <p>
+              {{phone}} , {{email}}
+            </p>
+            <p>{{details}}</p>
+          </div>
+
+          <!-- <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#" data-action="fake">
+              <i class="icon ion-email"></i>
+              Send Email
+            </a>
+            <a class="tab-item" href="#" data-action="fake">
+              <i class="icon ion-iphone"></i>
+              Call
+            </a>
+            <a class="tab-item" href="#" data-action="fake">
+              <i class="icon ion-share"></i>
+              Share
+            </a>
+          </div> -->
+
+        </div>
+        {{/each}}
+     
+    {{/ionContent}}
+  {{/ionView}}
+</template>
