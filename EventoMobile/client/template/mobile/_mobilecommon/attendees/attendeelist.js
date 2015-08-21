@@ -17,7 +17,7 @@ Template.attendeelist.events = {
 Template.attendeeitems.events = {
 	'click .attendeeitem': function(e,t){	
 	   var attendeeid= e.currentTarget.id;
-       Session.setPersistent('AttendeeId', sessionid);
+       Session.setPersistent('AttendeeId', attendeeid);
 	   Router.go('attendeedetail',{},{query: 'device='+ Session.get('device')}); 
 	 }
 

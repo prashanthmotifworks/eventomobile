@@ -1,0 +1,18 @@
+<template name="editpoll">
+	{{#contentFor "headerTitle"}}
+	<div class="row">
+		<div>
+			<img src="../img/logo.jpg" height="20px" width="20px" class="img-responsive" style="margin-left: 40px;">
+		</div>
+		<div >
+			<h1 class="title">Edit Poll</h1>
+		</div>
+	</div>
+	{{/contentFor}}
+
+	{{#ionView}}
+	{{#ionContent}}
+ {{> quickForm collection="Polls" id="editpoll" type="update" doc=this		}}
+ {{/ionContent}}
+{{/ionView}}
+</template>

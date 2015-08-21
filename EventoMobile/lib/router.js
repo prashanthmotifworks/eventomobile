@@ -220,6 +220,19 @@ Router.route('speakerdetail', function() {
 }
 );
 
+Router.route('attendeedetail', function() {
+ this.render('attendeedetail');
+ if(this.params.query.device!=undefined)
+ {
+   this.layout(this.params.query.device);
+ }
+ else
+ { 
+  this.layout('iphone');
+}
+}
+);
+
 Router.route('editesession', function() {
  this.render('editesession');
  if(this.params.query.device!=undefined)
@@ -276,7 +289,7 @@ Router.route('editeSession',
 
 Router.route('editevent', 
 {      
-        path : '/editevent/:_id',
+        path : '/editevent/:_id',       
         layoutTemplate: function() {
           console.log('param: '+this.params.device +', query:'+ this.params.query.device);
          
@@ -292,7 +305,32 @@ Router.route('editevent',
 
 
 
+Router.route('polldetail', function() {
+ this.render('polldetail');
+ if(this.params.query.device!=undefined)
+ {
+   this.layout(this.params.query.device);
+ }
+ else
+ { 
+  this.layout('iphone');
+}
+}
+);
 
+
+Router.route('editpoll', 
+{      
+        path : '/editpoll/:_id',       
+        layoutTemplate: function() {
+          console.log('param: '+this.params.device +', query:'+ this.params.query.device);         
+          return this.params.device ==undefined?'iphone':this.params.device;
+        },
+        data : function() {           
+            return Polls.findOne({_id:this.params._id});
+        }
+        
+    });
 
 
 

@@ -1,0 +1,34 @@
+<template name="attendeedetail">
+	  {{#contentFor "headerTitle"}}
+  <h1 class="title">Attendee Info 
+  </h1>
+  
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent class="padding contact-detail"}}
+      {{# each getattendeedetail}}
+        <div class="list card">
+
+          <div class="item item-avatar">
+            <img src="../img/attendee1.jpg">
+            <h2>{{fname}} {{lname}}</h2>
+            <p>{{designation}}, {{department}}</p>
+          </div>
+
+          <div class="item item-body">
+           
+
+            <h4>Contact info</h4>
+            <p>
+              {{phone}} , {{email}}
+            </p>
+            <p>{{details}}</p>
+          </div>
+
+        </div>
+        {{/each}}
+     
+    {{/ionContent}}
+  {{/ionView}}
+</template>
