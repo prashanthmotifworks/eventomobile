@@ -17,6 +17,9 @@ Template.esessiondetail.helpers({
     },
     getSpeakerInfo :function(speakerid){
     	return Speakers.findOne({_id:speakerid}).email;
+    },
+     getSessionContentCount :function(speakerid){
+        return SessionContents.find({sessionid:Session.get('SessionId')}).length;
     }
 
 });
@@ -26,6 +29,13 @@ Template.esessiondetail.events = {
 	 'click .editsession': function(e,t){	
 	   var sessionid= e.currentTarget.id;
 		Router.go('editeSession',{_id:sessionid,'device':Session.get('device')},{query: 'device='+ Session.get('device')}); 
-	 }
+	 },
+
+     'click .sessioncontentlist': function(e,t){   
+       var sessionid= e.currentTarget.id;
+        Router.go('sessioncontentlist',{},{query: 'device='+ Session.get('device')}); 
+     },
+
+     
 
 };

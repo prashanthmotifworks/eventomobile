@@ -1,0 +1,30 @@
+<template name="sessioncontentlist">
+
+	{{#contentFor "headerTitle"}}
+	<h1 class="title">session Contents</h1>
+	{{/contentFor}}
+	{{#ionView}}
+	{{#ionContent}}
+	<a class="addsessioncontent" id="addsessioncontent"><img src="../img/icons/add.png" width="40px" height="40px" class="imageborder img-responsive"></a>		
+
+	<div class="list">	
+    {{#each getsessioncontents}}
+			{{> sessioncontentitems}}
+	{{/each}}
+	</div>
+	{{/ionContent}}
+	{{/ionView}}
+</template>
+
+
+<template name="sessioncontentitems"> 
+     <div id={{_id}} class="sessioncontentitem">
+    {{#ionItem buttonRight=true avatar=true class="item-icon-right "}}
+            <img src="./img/attendee1.jpg">
+            {{title}} 
+            {{originalname}}
+            {{filesize}}
+            {{> ionIcon icon="ios-arrow-forward" class="positive"}}
+          {{/ionItem}}
+          </div>   
+</template>

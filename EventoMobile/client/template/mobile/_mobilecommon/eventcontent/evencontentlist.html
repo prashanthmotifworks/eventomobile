@@ -1,0 +1,47 @@
+<template name="eventcontentlist">
+
+	{{#contentFor "headerTitle"}}
+	<h1 class="title">Event Contents</h1>
+	{{/contentFor}}
+	{{#ionView}}
+	{{#ionContent}}
+	<a class="addeventcontent" id="addeventcontent"><img src="../img/icons/add.png" width="40px" height="40px" class="imageborder img-responsive"></a>		
+
+	<div class="list">	
+    {{#each geteventcontents}}
+			{{> eventcontentitems}}
+	{{/each}}
+	</div>
+	{{/ionContent}}
+	{{/ionView}}
+</template>
+
+
+<template name="eventcontentitems"> 
+     <div id={{_id}} class="eventcontentitem">
+    {{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right "}}
+           <!--  <img src="./img/attendee1.jpg"> -->
+
+                   {{#if isjpeg fileextension }}					
+					   <img src={{path}} width="25px" height="25px" />
+					{{/if }}
+					{{#if ispng fileextension }}					
+					   <img src={{path}} width="25px" height="25px" />
+					{{/if }}
+					{{#if ispdf fileextension }}					
+					 <img src="img/icons/pdf.png" width="25px" height="25px" />
+					{{/if }}
+					{{#if isdoc fileextension }}					
+					    <img src="img/icons/doc.jpg" width="25px" height="25px" />
+					{{/if }}
+					{{#if isexcel fileextension }}					
+					    <img src="img/icons/xls.png" width="25px" height="25px" />
+					{{/if }}
+
+            {{title}} 
+            {{originalname}}
+            {{filesize}}
+            {{> ionIcon icon="ios-arrow-forward" class="positive"}}
+          {{/ionItem}}
+          </div>   
+</template>

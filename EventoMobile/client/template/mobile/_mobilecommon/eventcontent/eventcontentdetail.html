@@ -1,0 +1,43 @@
+<template name="eventcontentdetail">
+
+	{{#contentFor "headerTitle"}}
+	<h1 class="title">File Info</h1>
+	{{/contentFor}}
+	{{#ionView}}
+	{{#ionContent}}
+
+
+	{{#each filedetail}}
+       {{> fileinfo}}
+    {{/each}}
+
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>
+
+
+<template name="fileinfo">
+ <div class="list card">
+	<!-- <a href={{path}}>{{title}}
+		{{originalname}}
+	</a> -->
+
+	 <div class="item item-avatar">
+            <img src={{path}}>
+            <h2>{{title}} </h2>
+            <p>{{originalname}}</p>
+            <p>{{filesize}}</p>
+          </div>
+
+          <div class="item item-body">
+           
+
+            <h3>Description:</h3>
+            <p>
+              {{description}}
+            </p>
+           
+          </div>
+</div>
+</template>

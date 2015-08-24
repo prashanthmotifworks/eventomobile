@@ -332,6 +332,58 @@ Router.route('editpoll',
         
     });
 
+Router.route('eventcontentlist', function() {
+ this.render('eventcontentlist');
+ if(this.params.query.device!=undefined)
+ {
+   this.layout(this.params.query.device);
+ }
+ else
+ { 
+  this.layout('iphone');
+}
+}
+);
+
+Router.route('addeventcontent', function() {
+ this.render('addeventcontent');
+ if(this.params.query.device!=undefined)
+ {
+   this.layout(this.params.query.device);
+ }
+ else
+ { 
+  this.layout('iphone');
+}
+}
+);
+
+Router.route('sessioncontentlist', function() {
+ this.render('sessioncontentlist');
+ if(this.params.query.device!=undefined)
+ {
+   this.layout(this.params.query.device);
+ }
+ else
+ { 
+  this.layout('iphone');
+}
+}
+);
+
+Router.route('eventcontentdetail', function() {
+ this.render('eventcontentdetail');
+ if(this.params.query.device!=undefined)
+ {
+   this.layout(this.params.query.device);
+ }
+ else
+ { 
+  this.layout('iphone');
+}
+}
+);
+
 
 
 

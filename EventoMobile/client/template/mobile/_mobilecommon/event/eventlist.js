@@ -1,7 +1,7 @@
 
 Template.eventlist.helpers({
 	getevents: function(){   
-       return Eventos.find();
+       return Eventos.find({});
    }
 });
 
