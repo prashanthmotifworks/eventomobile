@@ -6,6 +6,7 @@ Eventos.after.insert(function(userId, doc) {
 });
 Eventos.after.update(function(userId, doc) {	
 	Router.go('eventlist',{},{query: 'device='+ Session.get('device')}); 
+		//Router.go('eventlist'); 
 });
 
 

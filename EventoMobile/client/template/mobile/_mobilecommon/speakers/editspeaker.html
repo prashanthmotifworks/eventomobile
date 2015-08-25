@@ -1,19 +1,19 @@
-<template name="editevent">
+<template name="editspeaker">
 	{{#contentFor "headerTitle"}}
 	<div class="row">
 		<div>
 			<img src="../img/logo.jpg" height="20px" width="20px" class="img-responsive" style="margin-left: 40px;">
 		</div>
 		<div >
-			<h1 class="title">Edit	 Event</h1>
+			<h1 class="title">Edit Speaker</h1>
 		</div>
 	</div>
 	{{/contentFor}}
 
 	{{#ionView}}
 	{{#ionContent}}
- {{> quickForm collection="Eventos" id="editevent" type="update" doc=this		}}
- <a href="/eventlist?device=iphone">BACK</a>
+ {{> quickForm collection="Speakers" id="editspeaker" type="update" doc=this}}
+ 
  {{/ionContent}}
 {{/ionView}}
 </template>

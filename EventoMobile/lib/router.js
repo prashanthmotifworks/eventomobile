@@ -291,8 +291,7 @@ Router.route('editevent',
 {      
         path : '/editevent/:_id',       
         layoutTemplate: function() {
-          console.log('param: '+this.params.device +', query:'+ this.params.query.device);
-         
+          
           return this.params.device ==undefined?'iphone':this.params.device;
         },
         data : function() {
@@ -323,7 +322,7 @@ Router.route('editpoll',
 {      
         path : '/editpoll/:_id',       
         layoutTemplate: function() {
-          console.log('param: '+this.params.device +', query:'+ this.params.query.device);         
+                
           return this.params.device ==undefined?'iphone':this.params.device;
         },
         data : function() {           
@@ -383,6 +382,20 @@ Router.route('eventcontentdetail', function() {
 }
 }
 );
+
+
+Router.route('editspeaker', 
+{      
+        path : '/editspeaker/:_id',       
+        layoutTemplate: function() {
+                
+          return this.params.device ==undefined?'iphone':this.params.device;
+        },
+        data : function() {           
+            return Speakers.findOne({_id:this.params._id});
+        }
+        
+    });
 
 
 
