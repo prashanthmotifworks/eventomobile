@@ -1,11 +1,3 @@
-Template.registerHelper("prettifyDate", function(timestamp) {
-    var curr_date = timestamp.getDate();
-    var curr_month = timestamp.getMonth();
-    curr_month++;
-    var curr_year = timestamp.getFullYear();
-    result = curr_date + "/" + curr_month + "/" + curr_year;
-    return result;
-});
 
 
 Template.esessiondetail.helpers({

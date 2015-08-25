@@ -80,3 +80,10 @@ body
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
+
+.addbutton
+{
+    position: fixed;
+    z-index: 3 !important;
+    margin-left: 260px;
+  }

@@ -6,12 +6,12 @@ Router.configure({
 
 Router.map(function() {
 	this.route('home'); 
-	//this.route('devicehome'); 
-//	this.route('menulist');
+//this.route('devicehome'); 
+//this.route('menulist');
 //this.route('iphonelayout');
-//	this.route('menulist');
- // this.route('devicehome');
- // this.route('speakerlist');
+//this.route('menulist');
+// this.route('devicehome');
+// this.route('speakerlist');
 
 
 
