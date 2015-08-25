@@ -20,7 +20,7 @@
 <template name="speakeritems"> 
      <div id={{_id}} class="speakeritem">
     {{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right "}}
-            <img src="../img/attendee1.jpg">
+            <img src={{profilepath}}>
             {{fname}} {{lname}}<br/>	
             {{designation}}-{{department}}
             {{> ionIcon icon="ios-arrow-forward" class="positive"}}

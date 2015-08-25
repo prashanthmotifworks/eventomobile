@@ -12,7 +12,25 @@
 
 	{{#ionView}}
 	{{#ionContent}}
- {{> quickForm collection="Speakers" id="insertSpeakersForm" type="insert"}}
+   <!--  {{> quickForm collection="Speakers" id="insertSpeakersForm" type="insert"}} -->
+
+   {{#autoForm collection="Speakers" id="insertSpeakersForm" type="insert"}}
+    <fieldset>     
+      {{> afQuickField name='fname'}}
+      {{> afQuickField name='lname'}}
+      {{> afQuickField name='designation'}}
+      {{> afQuickField name='department'}}
+      {{> afQuickField name='phone'}}
+
+      {{> afQuickField name='details' rows=6}}
+      {{> afQuickField name='email'}}
+     <!--  {{> afQuickField name='profilepath' type="file"}} -->
+
+     <input type="file" class="file_bag speakerpic" id="eventspkimg" name="profilepath" />   
+     
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
  
 
 

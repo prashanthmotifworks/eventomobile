@@ -12,7 +12,27 @@
 
 	{{#ionView}}
 	{{#ionContent}}
- {{> quickForm collection="Attendees" id="insertAttendeesForm" type="insert"}}
+<!--  {{> quickForm collection="Attendees" id="insertAttendeesForm" type="insert"}} -->
+
+{{#autoForm collection="Attendees" id="insertAttendeesForm" type="insert"}}
+    <fieldset>     
+      {{> afQuickField name='fname'}}
+      {{> afQuickField name='lname'}}
+      {{> afQuickField name='designation'}}
+      {{> afQuickField name='department'}}
+      {{> afQuickField name='phone'}}
+
+      {{> afQuickField name='details' rows=6}}
+      {{> afQuickField name='email'}}
+     <!--  {{> afQuickField name='profilepath' type="file"}} -->
+
+     <input type="file" class="file_bag " id="eventspkimg" name="profilepath" />   
+     
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
+
+
  {{/ionContent}}
 {{/ionView}}
 </template>
