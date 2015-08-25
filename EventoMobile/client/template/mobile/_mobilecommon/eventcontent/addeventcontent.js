@@ -24,9 +24,11 @@ var content1 = {
     eventid:Session.get('EventoId')
 };
 
-  var status=EventContents.insert(content1, function insert(e){
+  var eventcontentid=EventContents.insert(content1, function insert(e){
 
    });
+
+  Session.setPersistent('EventContentId',eventcontentid);
 }
 
 Template.addeventcontent.events({

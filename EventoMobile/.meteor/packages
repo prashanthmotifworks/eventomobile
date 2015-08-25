@@ -15,10 +15,8 @@ aldeed:collection2
 aldeed:autoform
 lepozepo:s3
 
-meteoric:ionic-sass
 
-meteoric:ionic
-#meteoric:autoform-ionic
+
 u2622:persistent-session
 fourseven:scss@2.0.0
 meteoric:ionicons-sass
@@ -29,3 +27,6 @@ tsega:bootstrap3-datetimepicker@=3.1.3_3
 notorii:autoform-datetimepicker
 matb33:collection-hooks
 
+meteoric:ionic-sass
+meteoric:ionic
+#cfs:autoform

@@ -1,3 +1,15 @@
+// Files = new FS.Collection("files", {
+//   stores: [new FS.Store.GridFS("filesStore")]
+// });
+
+// Files.allow({
+//   download: function () {
+//     return true;
+//   },
+//   fetch: null
+// });
+
+
 Speakers =  new Mongo.Collection('speakers');
 Speaker = new SimpleSchema({
 				   eventid:      {type: String,    label: "eventid",       max: 200 , optional: true , autoform: { afFieldInput: {type: "hidden" }, 
@@ -11,7 +23,8 @@ Speaker = new SimpleSchema({
  				   phone:        {type: String,    label: "Phone",            max: 200 },
  				   details:      {type: String,    label: "description",          max: 9000 },
  				   email:        {type: String,     label: "Email",           max: 200 },
- 				   profilepath:  {type: String,     label: "File Path",      max:2000,   optional: true  },
+ 				   profilepath:  {type: String,     label: "File Path",      max:2000,   optional: true },
+                                  // autoform: {afFieldInput: {ype: "cfs-file",collection: "files" } }},
  				   isconfirmed:  {type: Boolean,    label: "isconfirmed",    defaultValue:false , autoform: { type: "hidden"} }
 
  				});
@@ -29,3 +42,5 @@ Speakers.allow({
 		    return doc && doc.userId === userId;
 		  }
 });
+
+

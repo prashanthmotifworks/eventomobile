@@ -19,8 +19,7 @@
 
 <template name="eventcontentitems"> 
      <div id={{_id}} class="eventcontentitem">
-    {{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right "}}
-           <!--  <img src="./img/attendee1.jpg"> -->
+    {{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right "}}        
 
                    {{#if isjpeg fileextension }}					
 					   <img src={{path}} width="25px" height="25px" />
@@ -38,9 +37,7 @@
 					    <img src="img/icons/xls.png" width="25px" height="25px" />
 					{{/if }}
 
-            {{title}} 
-            {{originalname}}
-            {{filesize}}
+            {{title}}     
             {{> ionIcon icon="ios-arrow-forward" class="positive"}}
           {{/ionItem}}
           </div>   

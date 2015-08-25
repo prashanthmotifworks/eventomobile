@@ -1,5 +1,5 @@
 Template.eventcontentdetail.helpers({
     filedetail: function(){
-        return EventContents.find({eventid:Session.get('EventoId')});
+        return EventContents.find({_id:Session.get('EventContentId')});
     }
 })

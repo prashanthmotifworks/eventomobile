@@ -1,0 +1,35 @@
+<template name="fileinfo">
+ <div class="list card">
+		 <div class="item item-avatar">
+            <h2>{{title}} </h2>
+          </div>
+          <div class="item item-body">
+            <h3>Description:</h3>
+            <p>{{originalname}}</p>
+            <p>{{filesizeinkb filesize}}</p>
+            <p>
+              {{description}}
+            </p>
+           
+          </div>
+</div>
+ <div class="list card">   
+          {{#if isjpeg fileextension }}          
+             <img src={{path}} width="35px" height="35px" />
+          {{/if }}
+          {{#if ispng fileextension }}          
+             <img src={{path}} width="35px" height="35px" />
+          {{/if }}
+          {{#if ispdf fileextension }}          
+           <img src="img/icons/pdf.png" width="35px" height="35px" />
+          {{/if }}
+          {{#if isdoc fileextension }}          
+              <img src="img/icons/doc.jpg" width="35px" height="35px" />
+          {{/if }}
+          {{#if isexcel fileextension }}          
+              <img src="img/icons/xls.png" width="35px" height="35px" />
+          {{/if }}
+
+   <a href="{{path}}"><img src="../activedownloadIcon.png" width="25px" height="25px"></a>
+  </div>
+</template>
