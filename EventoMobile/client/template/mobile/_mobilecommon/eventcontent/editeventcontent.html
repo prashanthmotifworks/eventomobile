@@ -1,4 +1,4 @@
-<template name="editevent">
+<template name="editeventcontent">
 	{{#contentFor "headerTitle"}}
 	<div class="row">
 		<div>
@@ -12,7 +12,7 @@
 
 	{{#ionView}}
 	{{#ionContent}}
- {{> quickForm collection="Eventos" id="editevent" type="update" doc=this}}
+ {{> quickForm collection="EventContents" id="editeventcontent" type="update" doc=this		}}
 
  {{/ionContent}}
 {{/ionView}}

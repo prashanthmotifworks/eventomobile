@@ -3,11 +3,13 @@
 	{{#contentFor "headerTitle"}}
 	<h1 class="title">File Info</h1>
 	{{/contentFor}}
+
 	{{#ionView}}
 	{{#ionContent}}
 
 
 	{{#each filedetail}}
+	   <button id={{_id}} class="button icon ion-gear-a editeventcontent"></button>
        {{> fileinfo}}
     {{/each}}
 

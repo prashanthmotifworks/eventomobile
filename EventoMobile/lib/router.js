@@ -114,31 +114,8 @@ Router.route('addattendee', function() {
 }
 );
 
-Router.route('addpoll', function() {
- this.render('addpoll');
- if(this.params.query.device!==undefined)
- {
-   this.layout(this.params.query.device);
- }
- else
- { 
-  this.layout('layout');
-}
-}
-);
 
-Router.route('pollanswer', function() {
- this.render('pollanswer');
- if(this.params.query.device!==undefined)
- {
-   this.layout(this.params.query.device);
- }
- else
- { 
-  this.layout('layout');
-}
-}
-);
+
 
 Router.route('eventmenu', function() {
  this.render('eventmenu');
@@ -168,18 +145,6 @@ Router.route('eventlist', function() {
 
 
 
-Router.route('polllist', function() {
- this.render('polllist');
- if(this.params.query.device!==undefined)
- {
-   this.layout(this.params.query.device);
- }
- else
- { 
-  this.layout('layout');
-}
-}
-);
 
 Router.route('esessionlist', function() {
  this.render('esessionlist');
@@ -233,18 +198,18 @@ Router.route('attendeedetail', function() {
 }
 );
 
-Router.route('editesession', function() {
- this.render('editesession');
- if(this.params.query.device!==undefined)
- {
-   this.layout(this.params.query.device);
- }
- else
- { 
-  this.layout('layout');
-}
-}
-);
+// Router.route('editesession', function() {
+//  this.render('editesession');
+//  if(this.params.query.device!==undefined)
+//  {
+//    this.layout(this.params.query.device);
+//  }
+//  else
+//  { 
+//   this.layout('layout');
+// }
+// }
+// );
 
 Router.route('eventdetail', function() {
  this.render('eventdetail');
@@ -272,64 +237,71 @@ Router.route('esessiondetail', function() {
 }
 );
 
+// Router.route('editeSession', 
+// {      
+//         path : '/editeSession/:_id',
+//         layoutTemplate: function() {
+//           console.log('param: '+this.params.device +', query:'+ this.params.query.device);
+         
+//           return this.params.device ==undefined?'layout':this.params.device;
+//         },
+//         data : function() {           
+//             return eSessions.findOne({_id:this.params._id});
+//         }
+        
+//     });
+
+
+
+// Router.route('editevent', 
+// {      
+//         path : '/editevent/:_id',       
+//         layoutTemplate: function() {
+          
+//           return this.params.device ==undefined?'layout':this.params.device;
+//         },
+//         data : function() {
+           
+//             return Eventos.findOne({_id:this.params._id});
+//         }
+        
+//     });
+
 Router.route('editeSession', 
 {      
-        path : '/editeSession/:_id',
+        path : 'editeSession',       
         layoutTemplate: function() {
-          console.log('param: '+this.params.device +', query:'+ this.params.query.device);
-         
-          return this.params.device ==undefined?'layout':this.params.device;
-        },
-        data : function() {           
-            return eSessions.findOne({_id:this.params._id});
-        }
-        
-    });
-
-
-Router.route('editevent', 
-{      
-        path : '/editevent/:_id',       
-        layoutTemplate: function() {
-          
-          return this.params.device ==undefined?'layout':this.params.device;
+           return Session.get('device')==undefined ? 'layout': Session.get('device');
+         // return this.params.query.device ==undefined?'layout':this.params.query.device;
         },
         data : function() {
            
-            return Eventos.findOne({_id:this.params._id});
+            return eSessions.findOne({_id:this.params.query._id});
         }
         
     });
 
 
 
-
-Router.route('polldetail', function() {
- this.render('polldetail');
- if(this.params.query.device!==undefined)
- {
-   this.layout(this.params.query.device);
- }
- else
- { 
-  this.layout('layout');
-}
-}
-);
-
-
-Router.route('editpoll', 
+Router.route('editeventcontent', 
 {      
-        path : '/editpoll/:_id',       
+        path : 'editeventcontent',       
         layoutTemplate: function() {
-                
-          return this.params.device ==undefined?'layout':this.params.device;
+          return Session.get('device')==undefined ? 'layout': Session.get('device');
+         // return this.params.query.device ==undefined?'layout':this.params.query.device;
         },
-        data : function() {           
-            return Polls.findOne({_id:this.params._id});
+        data : function() {
+           //
+            return EventContents.findOne({_id:this.params.query._id});
         }
         
     });
+
+
+
+
+
+
 
 Router.route('eventcontentlist', function() {
  this.render('eventcontentlist');
@@ -384,18 +356,130 @@ Router.route('eventcontentdetail', function() {
 );
 
 
-Router.route('editspeaker', 
+
+Router.route('editevent', 
 {      
-        path : '/editspeaker/:_id',       
-        layoutTemplate: function() {
-                
-          return this.params.device ==undefined?'layout':this.params.device;
+        path : 'editevent',       
+        layoutTemplate: function() {     
+         return Session.get('device')==undefined ? 'layout': Session.get('device');     
+         // return this.params.query.device ==undefined?'layout':this.params.query.device;
         },
         data : function() {           
-            return Speakers.findOne({_id:this.params._id});
+            return Eventos.findOne({_id:this.params.query._id});
         }
         
     });
+
+Router.route('editspeaker', 
+{      
+        path : 'editspeaker',       
+        layoutTemplate: function() {          
+             return Session.get('device')==undefined ? 'layout': Session.get('device');
+
+      // return this.params.query.device ==undefined?'layout':this.params.query.device;
+        },
+        data : function() {
+           
+            return Speakers.findOne({_id:this.params.query._id});
+        }
+        
+    });
+
+Router.route('editattendee', 
+{      
+        path : 'editattendee',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');
+         // return this.params.query.device ==undefined?'layout':this.params.query.device;
+        },
+        data : function() {
+           
+            return Attendees.findOne({_id:this.params.query._id});
+        }
+        
+    });
+
+Router.route('eventcontenttab', 
+{      
+        path : 'eventcontenttab',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+    });
+
+Router.route('polldetail', 
+{      
+        path : 'polldetail',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+    });
+
+// Router.route('editpoll', 
+// {      
+//         path : 'editpoll',       
+//         layoutTemplate: function() {
+//            return Polls.get('device')==undefined ? 'layout': Session.get('device');        
+//         }
+        
+//     });
+
+Router.route('editpoll', 
+{      
+        path : 'editpoll',       
+        layoutTemplate: function() {
+          return Session.get('device')==undefined ? 'layout': Session.get('device');
+         // return this.params.query.device ==undefined?'layout':this.params.query.device;
+        },
+        data : function() {
+           
+            return Polls.findOne({_id:this.params.query._id});
+        }
+        
+    });
+
+Router.route('pollanswer', 
+{      
+        path : 'pollanswer',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+    });
+
+Router.route('polllist', 
+{      
+        path : 'polllist',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+    });
+
+
+Router.route('addpoll', 
+{      
+        path : 'addpoll',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+    });
+
+
+Router.route('menulist', 
+{      
+        path : 'menulist',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+    });
+
+
+
 
 
 

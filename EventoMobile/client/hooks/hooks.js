@@ -5,8 +5,8 @@ Eventos.after.insert(function(userId, doc) {
 
 });
 Eventos.after.update(function(userId, doc) {	
-	Router.go('eventlist',{},{query: 'device='+ Session.get('device')}); 
-		//Router.go('eventlist'); 
+	//Router.go('eventlist',{},{query: 'device='+ Session.get('device')}); 
+		window.location.replace('/eventlist?device='+Session.get('device'));
 });
 
 
@@ -23,8 +23,21 @@ eSessions.after.insert(function(userId, doc) {
 });
 
 eSessions.after.update(function(userId, doc) {	
-	Router.go('esessionlist',{},{query: 'device='+ Session.get('device')}); 
+//	Router.go('esessionlist',{},{query: 'device='+ Session.get('device')}); 
+window.location.replace('/esessionlist?device='+Session.get('device'));
 });
+
+//=============================================EventContent==========================
+EventContents.after.insert(function(userId, doc) {
+	//Session.setPersistent('SessionId', doc._id);
+	Router.go('eventcontentlist',{},{query: 'device='+ Session.get('device')}); 
+});
+
+EventContents.after.update(function(userId, doc) {	
+//	Router.go('esessionlist',{},{query: 'device='+ Session.get('device')}); 
+window.location.replace('/eventcontentlist?device='+Session.get('device'));
+});
+
 
 //=============================================SPEAKERS==========================
 
@@ -50,7 +63,13 @@ Speakers.after.insert(function(userId, doc) {
 
 				Router.go('speakerlist',{},{query: 'device='+ Session.get('device')}); 
 });
-//===========================================
+
+
+Speakers.after.update(function(userId, doc) {	
+//	Router.go('esessionlist',{},{query: 'device='+ Session.get('device')}); 
+window.location.replace('/speakerlist?device='+Session.get('device'));
+});
+//===========================================Attendee
 
 
 
@@ -64,7 +83,6 @@ Attendees.before.insert(function(userId, doc) {
 });	
 
 Attendees.after.insert(function(userId, doc) {
-
 	Session.setPersistent('AttendeeId', doc._id);
 	var files =  $("input[name='profilepath']")[0].files;
 
@@ -81,6 +99,12 @@ Attendees.after.insert(function(userId, doc) {
 	Router.go('attendeelist',{},{query: 'device='+ Session.get('device')}); 
 });
 
+Attendees.after.update(function(userId, doc) {	
+//	Router.go('esessionlist',{},{query: 'device='+ Session.get('device')}); 
+window.location.replace('/attendeelist?device='+Session.get('device'));
+});
+
+//==============================
 
 Polls.before.insert(function(userId, doc) {
 	doc.eventid=Session.get('EventoId');
@@ -88,7 +112,11 @@ Polls.before.insert(function(userId, doc) {
 });
 
 PollAnswers.before.insert(function(userId, doc) {
-	doc.eventid=Session.get('EventoId');
-	doc.sessionid=Session.get('SessionId');	
-	doc.pollid=Session.get('PollId');	
+	// doc.eventid=Session.get('EventoId');
+	// doc.sessionid=Session.get('SessionId');	
+	// doc.pollid=Session.get('PollId');	
+});
+
+PollAnswers.after.insert(function(userId, doc) {
+window.location.replace('/polllist?device='+Session.get('device'));
 });

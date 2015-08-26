@@ -20,7 +20,8 @@ Template.esessiondetail.events = {
 	
 	 'click .editsession': function(e,t){	
 	   var sessionid= e.currentTarget.id;
-		Router.go('editeSession',{_id:sessionid,'device':Session.get('device')},{query: 'device='+ Session.get('device')}); 
+		//Router.go('editeSession',{_id:sessionid,'device':Session.get('device')},{query: 'device='+ Session.get('device')}); 
+        Router.go('editeSession',{}, {query: 'device='+Session.get('device') +'&_id='+sessionid }); 
 	 },
 
      'click .sessioncontentlist': function(e,t){   

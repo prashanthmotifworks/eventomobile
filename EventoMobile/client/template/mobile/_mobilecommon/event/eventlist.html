@@ -1,55 +1,33 @@
-<template name="eventlist">
+ <template name="eventlist">
 
 	{{#contentFor "headerTitle"}}
-	<h1 class="title">
-
-		Events 
-    
-	</h1>
-	
-
+	<h1 class="title">Events</h1>
 	{{/contentFor}}
 
+   {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear addevent" id="addevent"  data-action="addevent">{{> ionIcon icon="ios-plus-empty"}}</button>
+   {{/contentFor}}
 	
 	{{#ionView}}
 	{{#ionContent}}
-     <a><img id="addevent" src="../img/icons/add.png" width="40px" height="40px" class="imageborder img-responsive " 
-     	style="position: fixed !important;    z-index: 3000 !important;    margin-left: 260px;"></a>	
-
-	<!-- <div class="col-xs-12" id="addevent" >	
-		<div class="col-sm-8"></div>
-			<div class="col-sm-4 "  > -->
-					
-			<!-- </div>
-		</div	> -->
-
-	<div class="list">	
-    {{#each getevents}}
+	
+		<div class="list">	
+			{{#each getevents}}
 			{{> eventitems}}
-	{{/each}}
-	</div>
-	{{/ionContent}}
-	{{/ionView}}
-</template>
+			{{/each}}
+		</div>
+		{{/ionContent}}
+		{{/ionView}}
+	</template>
 
 
-<template name="eventitems">
-  
+	<template name="eventitems">  
+		<div id={{_id}} class="eventitem">
+			{{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right " }}           
+			<img src="../img/attendee1.jpg">
+			{{title}}          
+			{{> ionIcon icon="ios-arrow-forward" class="positive"}}       
+			{{/ionItem}}
+		</div>
 
-    <!-- <a class="item item-avatar eventitem" id={{_id}} >
-      <img src="../img/attendee1.jpg">
-      <h2 class="textleft">{{title}}</h2>
-      <p class="textleft">{{venuename}} </p>
-      {{> ionIcon icon="ios-arrow-forward" class="positive"}}
-    </a> -->
-    <div id={{_id}} class="eventitem">
-    {{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right " }}
-           
-            <img src="../img/attendee1.jpg">
-            {{title}} 
-            {{venuename}}
-            {{> ionIcon icon="ios-arrow-forward" class="positive"}}       
-          {{/ionItem}}
-   </div>
-   
-    </template>
+	</template>

@@ -6,11 +6,12 @@ Template.polldetail.helpers({
 });
 
 Template.polldetail.events = {	
-	 'click .editpoll ': function(e,t){	
+	 'click .editpoll': function(e,t){	
 	   var pollid= e.currentTarget.id;
-		Router.go('editpoll',{_id:pollid,'device':Session.get('device')},{query: 'device='+ Session.get('device')}); 
+		//Router.go('editpoll',{},{query: 'device='+ Session.get('device')}); 
+		Router.go('editpoll',{}, {query: 'device='+Session.get('device') +'&_id='+pollid }); 
 	 },
-	 'click #submit ': function(e,t){	
+	 'click #savepollanswer ': function(e,t){	
 
 	  // var option= $(":radio:checked").map(idSelector).get();
 
@@ -31,7 +32,7 @@ Template.polldetail.events = {
         					'optionc':answer.optionc,  'optiond':answer.optiond,    'optione':answer.optione,  'comment':answer.comment
         });
 
-	Router.go('polllist',{},{query: 'device='+ Session.get('device')}); 
+	//Router.go('polllist'); 
 	//	Router.go('editpoll',{_id:pollid,'device':Session.get('device')},{query: 'device='+ Session.get('device')}); 
 	 }
 

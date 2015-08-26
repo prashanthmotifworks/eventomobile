@@ -35,7 +35,7 @@ Template.addeventcontent.events({
     "click button.upload": function(e){
         var files = $("input.file_bag")[0].files
 
-        S3.upload({
+       var result= S3.upload({
                 files:files,
                 path:"Evento"
             },function(err,r){

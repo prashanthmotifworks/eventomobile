@@ -3,11 +3,13 @@
 	<h1 class="title">Poll Questions</h1>
 	{{/contentFor}}
 
-	
+	 {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear addpoll"  data-action="addpoll" id="addpoll">{{> ionIcon icon="ios-plus-empty"}}</button>
+   {{/contentFor}}
 
 	{{#ionView}}
 	{{#ionContent}}
-	<a class="addpoll" id="addpoll"><img src="../img/icons/add.png" width="40px" height="40px" class="imageborder img-responsive addbutton"></a>	
+	<!-- <a class="addpoll" id="addpoll"><img src="../img/icons/add.png" width="40px" height="40px" class="imageborder img-responsive"></a>	 -->
 	<div class="list">
 		{{#each getpollquestions}}
 		{{> pollitems}}
@@ -25,8 +27,8 @@
 		<h2 class="textleft">{{title}}</h2>		
 		{{> ionIcon icon="ios-arrow-forward" class="positive"}}
 	</a> -->
-<div id={{_id}} class="pollitem">
-	 {{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right"}}
+<div id={{_id}} class="pollitemclick">
+	 {{#ionItem buttonRight=true avatar=true class="item-icon-right"}}
             <img src="../question.jpg">
             {{title}} 
             {{> ionIcon icon="ios-arrow-forward" class="positive"}}

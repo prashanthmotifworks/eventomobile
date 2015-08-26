@@ -15,24 +15,24 @@ eSession = new SimpleSchema({
 // },
 eventid:      {type: String,    label: "eventid",       max: 200 , optional: true , autoform: { afFieldInput: {type: "hidden" }, 
 	 			 																														afFormGroup: {label: false }}},
-title:       {  type: String, 	label: "Title",   max: 200  },
-starttime:   {  type: Date,     label: "Start Time",
+title:       {  type: String, 	label: "Title",   max: 200, optional: true   },
+starttime:   {  type: Date,     label: "Start Time", optional: true ,
 autoform: {
 	afFieldInput: {
 		type: "bootstrap-datetimepicker"
 	}
 }
 },
-endtime:     {  type: Date,     label: "End Time",
+endtime:     {  type: Date,     label: "End Time",optional: true ,
 autoform: {
 	afFieldInput: {
 		type: "bootstrap-datetimepicker"
 	}
 }
 },
-description: {  type: String,   label: "Description"  },
+description: {  type: String,   label: "Description" ,optional: true  },
 
-speaker: 	 { type: [String], 	label: "Select speaker" , autoform: {
+speaker: 	 { type: [String], 	label: "Select speaker" , optional: true ,autoform: {
 	options: function() {
 		return _.map(Speakers.find().fetch(), function(speaker) {
 			return {
@@ -44,7 +44,7 @@ speaker: 	 { type: [String], 	label: "Select speaker" , autoform: {
 }
 },
 
-attendee: 	 { type: [String], 	label: "Select attendee" , autoform: {
+attendee: 	 { type: [String], 	label: "Select attendee" , optional: true , autoform: {
 	options: function() {
 		return _.map(Attendees.find().fetch(), function(attendee) {
 			return {

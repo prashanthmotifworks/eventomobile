@@ -1,0 +1,134 @@
+<template name="eventcontenttab">
+ <!--   {{#contentFor "headerTitle"}}
+  <div class="row">
+    <div>
+      <img src="../img/logo.jpg" height="20px" width="20px" class="img-responsive" style="margin-left: 40px;">
+    </div>
+    <div >
+      <h1 class="title">EventContents</h1>
+    </div>
+  </div>
+  {{/contentFor}}
+
+  {{#ionView}}
+  {{#ionContent}}
+  
+	<div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+    <div class="tabs">
+      <a class="tab-item active" href="#">
+        <i class="icon ion-home"></i>
+        Test
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-star"></i>
+        Favorites
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-gear-a"></i>
+        Settings
+      </a>
+    </div>
+  </div>
+  <div class="tabs-striped tabs-color-assertive">
+    <div class="tabs">
+      <a class="tab-item active" href="#">
+        <i class="icon ion-home"></i>
+        Test
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-star"></i>
+        Favorites
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-gear-a"></i>
+        Settings
+      </a>
+    </div>
+  </div>
+
+  {{/ionContent}}
+{{/ionView}} -->
+
+
+<!-- {{#contentFor "headerTitle"}}
+        <h1 class="title">Title</h1>
+    {{/contentFor}}
+
+
+    {{#ionView}}
+
+        <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+            <div class="tabs">
+                <a class="tab-item active" href="#">
+                    First
+                </a>
+                <a class="tab-item" href="#">
+                    Second
+                </a>
+            </div>
+        </div>
+
+    {{#ionContent class="has-tabs-top"}}
+        <div class="list">
+            LISTs
+        </div>
+    {{/ionContent}}
+    {{/ionView}} -->
+
+     {{#ionBody}} 
+    {{> ionNavBar class=""}}
+      {{#ionNavView}}
+      {{#ionHeaderBar class=""}}
+        <h1 class="title">MY HEADER TEXT</h1>
+      {{/ionHeaderBar}}
+      {{#ionContent}}
+        {{#ionList}}
+          {{#ionItem  class="bar bar-calm"}}
+           Item #1
+          {{/ionItem}}   
+          {{#ionItem  class="bar "}}
+           Item #2
+          {{/ionItem}}   
+          {{#ionItem  class="bar bar-calm"}}
+           Item #3
+          {{/ionItem}}   
+          {{#ionItem  class="bar "}}
+           Item #4
+          {{/ionItem}}   
+          {{#ionItem  class="bar bar-calm"}}
+           Item #1
+          {{/ionItem}}   
+          {{#ionItem  class="bar "}}
+           Item #2
+          {{/ionItem}}   
+          {{#ionItem  class="bar bar-calm"}}
+           Item #3
+          {{/ionItem}}   
+          {{#ionItem  class="bar "}}
+           Item #4
+          {{/ionItem}}   
+          {{#ionItem  class="bar bar-calm"}}
+           Item #1
+          {{/ionItem}}   
+          {{#ionItem  class="bar "}}
+           Item #2
+          {{/ionItem}}   
+          {{#ionItem  class="bar bar-calm"}}
+           Item #3
+          {{/ionItem}}   
+          {{#ionItem  class="bar "}}
+           Item #4
+          {{/ionItem}}   
+        {{/ionList}}
+      {{/ionContent}}
+      {{#ionTabs style="ios"}}
+        {{> ionTab title="Home"  icon="ios-home"}}
+        {{> ionTab title="Rate"  iconOff="ios-star" iconOn="ios-star"}}
+        {{> ionTab title="View"  iconOff="ios-search-strong" iconOn="ios-search-strong"}}
+        {{> ionTab title="Settings" iconOff="ios-gear" iconOn="ios-gear"}}
+      {{/ionTabs}}
+    {{/ionNavView}}
+  {{/ionBody}}
+
+
+</template>

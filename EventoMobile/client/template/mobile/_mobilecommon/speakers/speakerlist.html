@@ -3,9 +3,16 @@
 	{{#contentFor "headerTitle"}}
 	<h1 class="title">Speakers</h1>
 	{{/contentFor}}
+
+
+	{{#contentFor "headerButtonRight"}}
+    <button class="button button-clear addspeaker" data-action="addspeaker" id="addspeaker">{{> ionIcon icon="ios-plus-empty"}}</button>
+   {{/contentFor}}
+
+   
 	{{#ionView}}
 	{{#ionContent}}
-	<a class="addspeaker" id="addspeaker"><img src="../img/icons/add.png" width="40px" height="40px" class="imageborder img-responsive addbutton"></a>		
+	<!-- <a class="addspeaker" id="addspeaker"><img src="../img/icons/add.png" width="40px" height="40px" class="imageborder img-responsive addbutton"></a> -->		
 
 	<div class="list">	
     {{#each getspeakers}}

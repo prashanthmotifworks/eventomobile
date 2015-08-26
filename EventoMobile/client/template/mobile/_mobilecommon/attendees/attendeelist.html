@@ -3,9 +3,15 @@
 	{{#contentFor "headerTitle"}}
 	<h1 class="title">Attendees</h1>
 	{{/contentFor}}
+
+
+{{#contentFor "headerButtonRight"}}
+    <button class="button button-clear addattendee" data-action="addattendee"   id="addattendee">{{> ionIcon icon="ios-plus-empty"}}</button>
+   {{/contentFor}}
+
 	{{#ionView}}
 	{{#ionContent}}
-	<a class="addattendee" id="addattendee"><img src="../img/icons/add.png" width="40px" height="40px" class="imageborder img-responsive addbutton"></a>		
+	<!-- <a class="addattendee" id="addattendee"><img src="../img/icons/add.png" width="40px" height="40px" class="imageborder img-responsive addbutton"></a>	 -->	
 
 	<div class="list">	
     {{#each getattendees}}

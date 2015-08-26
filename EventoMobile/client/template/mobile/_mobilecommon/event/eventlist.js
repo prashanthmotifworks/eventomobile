@@ -5,14 +5,19 @@ Template.eventlist.helpers({
    }
 });
 
-Template.eventlist.events = {
-	
-	 'click #addevent': function(e,t){	
-	   var nextscreen= e.currentTarget.id;
-		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')}); 
-	 }
 
-};
+
+
+
+// Template.eventlist.events = {
+	
+	
+// 		'click [data-action=addevent]': function(e, y) {
+// 	 	alert('addevent');
+	  
+// 	 }
+
+// };
 
 
 

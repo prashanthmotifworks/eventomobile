@@ -19,7 +19,7 @@ lepozepo:s3
 
 u2622:persistent-session
 fourseven:scss@2.0.0
-meteoric:ionicons-sass
+meteoric:ionicons-sass@0.1.6
 lookback:logger
 
 aldeed:autoform-bs-datetimepicker
@@ -27,6 +27,6 @@ tsega:bootstrap3-datetimepicker@=3.1.3_3
 notorii:autoform-datetimepicker
 matb33:collection-hooks
 
-meteoric:ionic-sass
+meteoric:ionic-sass@0.1.9
 meteoric:ionic
 
