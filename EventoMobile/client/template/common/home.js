@@ -8,6 +8,7 @@
 
 Template.home.rendered = function () {
    Session.setDefault('device', 'layout');
+   Session.setPersistent('device', 'layout');
 };
 
 
