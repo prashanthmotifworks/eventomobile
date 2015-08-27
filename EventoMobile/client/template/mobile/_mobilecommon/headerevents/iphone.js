@@ -28,6 +28,8 @@ Template.iphone.events({
 		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')}); 
 	},
 
+
+
 	'click [data-action=editsession]': function(e, t) {
 		var nextscreen= e.currentTarget.id;
 		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')}); 
@@ -39,7 +41,25 @@ Template.iphone.events({
 	'click [data-action=editsessioncontent]': function(e, t) {
 		var nextscreen= e.currentTarget.id;
 		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')+'&_id='+Session.get('SessionContentId')}); 
+	},
+	'click [data-action=editeventcontent]': function(e, t) {
+		var nextscreen= e.currentTarget.id;
+		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')+'&_id='+Session.get('SessionContentId')}); 
+	},
+
+
+
+	'click [data-action=deleteeventcontent]': function(e, t) {
+		var nextscreen= e.currentTarget.id;
+		var status= EventContents.remove({_id:Session.get('EventContentID')});
+		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')}); 
+	},
+	'click [data-action=deletesessioncontent]': function(e, t) {
+		var nextscreen= e.currentTarget.id;
+		var status= SessionContents.remove({_id:Session.get('SessionContentID')});
+		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')}); 
 	}
+	
 
 	
 

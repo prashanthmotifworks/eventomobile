@@ -1,11 +1,21 @@
 <template name="eventcontentdetail">
 
 	{{#contentFor "headerTitle"}}
-	<h1 class="title">File Info</h1>
+	<h1 class="title">Event Content</h1>
 	{{/contentFor}}
+
+
+	{{#contentFor "headerButtonRight"}}
+    <button class="button button-clear editeventcontent" data-action="editeventcontent"  id="editeventcontent">Edit</button>
+    <button class="button button-clear deleteeventcontent" data-action="deleteeventcontent"  id="eventcontentlist">Delete</button>
+   {{/contentFor}}
+
+
 
 	{{#ionView}}
 	{{#ionContent}}
+
+
 
 
 	{{#each filedetail}}
