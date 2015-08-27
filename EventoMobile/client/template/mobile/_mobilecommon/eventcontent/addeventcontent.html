@@ -12,31 +12,17 @@
 
 	{{#ionView}}
 	{{#ionContent}}
+	
+	{{#autoForm  collection="EventContents" id="addeventcontent" type="insert"}}	
+	<fieldset>     
+		{{> afQuickField name='title' class='title'}}
+		{{> afQuickField name='description' class='description'}}
+		<input type="file" class="file_eventcontent eventcontent" id="eventcontent" name="eventcontent" />  
+	</fieldset> 
+	<button type="submit" class="btn btn-primary">Upload Content</button>
+	{{/autoForm}}
 
 
-	 {{#autoForm  collection="EventContents" id="eventcontentForm" }}
-		<!-- <div class="row white ">
- 			<fieldset>
- 			<div class="col-md-3" >	</div>
-			<div class="col-md-3" >
-				<div class="col-md-12" > -->
-				  {{> afQuickField name='title' class='title'}}
-				  {{> afQuickField name='description' class='description'}}
-				  <input type="file" class="file_bag">
-				  {{#each files}}
-			        <p>{{percent_uploaded}}</p>
-			    {{/each}}
-			<!-- 	</div>
-			</div>
-			<div class="col-md-3"> -->
-				 <div style="text-align:center;"><button type="submit" class="btn btn-lg btn-success upload" >Create Content</button></div>
-			<!-- </div>
-				<div class="col-md-3" >	</div>
- 			</fieldset>
-		</div> -->
-    {{/autoForm}}
-
-    
 	{{/ionContent}}
 	{{/ionView}}
 

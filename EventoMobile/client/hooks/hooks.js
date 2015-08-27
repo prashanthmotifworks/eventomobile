@@ -30,7 +30,26 @@ window.location.replace('/esessionlist?device='+Session.get('device'));
 //=============================================EventContent==========================
 EventContents.after.insert(function(userId, doc) {
 	//Session.setPersistent('SessionId', doc._id);
-	Router.go('eventcontentlist',{},{query: 'device='+ Session.get('device')}); 
+
+
+	Session.setPersistent('EventContentID', doc._id);	
+	var files =  $("input[name='eventcontent']")[0].files;
+    S3.upload({files:files,path:"Evento"}, 
+				function(error, s3Url){
+				var status=  EventContents.update( doc._id, 
+					        { $set: { path: s3Url.url , 
+					        	      eventid:Session.get('EventoId'),
+					        	      originalname: s3Url.file.original_name,
+					        	      fileextension: s3Url.file.type,
+					        	      filesize: s3Url.file.size
+					        	    } 
+
+					        });
+
+				});
+
+				Router.go('eventcontentlist',{},{query: 'device='+ Session.get('device')}); 
+	//Router.go('eventcontentlist',{},{query: 'device='+ Session.get('device')}); 
 });
 
 EventContents.after.update(function(userId, doc) {	
@@ -42,7 +61,25 @@ window.location.replace('/eventcontentlist?device='+Session.get('device'));
 
 SessionContents.after.insert(function(userId, doc) {	
 //	Router.go('esessionlist',{},{query: 'device='+ Session.get('device')}); 
-window.location.replace('/sessioncontentlist?device='+Session.get('device'));
+Session.setPersistent('SessionContentID', doc._id);
+var files =  $("input[name='sessioncontent']")[0].files;
+S3.upload({files:files,path:"Evento"}, 
+				function(error, s3Url){
+				var status=  SessionContents.update( doc._id, 
+					        { $set: { path: s3Url.url , 
+					        	      eventid:Session.get('EventoId'),
+					        	      sessionid:Session.get('SessionId'),
+					        	      originalname: s3Url.file.original_name,
+					        	      fileextension: s3Url.file.type,
+					        	      filesize: s3Url.file.size
+					        	    } 
+
+					        });
+
+				});
+
+Router.go('sessioncontentlist',{},{query: 'device='+ Session.get('device')}); 
+//window.location.replace('/sessioncontentlist?device='+Session.get('device'));
 });
 
 

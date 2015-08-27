@@ -12,14 +12,14 @@
 
 	{{#ionView}}
 	{{#ionContent}}
-	 {{#autoForm  collection="SessionContents" id="addsessioncontent" }}
+	 {{#autoForm  collection="SessionContents" id="addsessioncontent" type="insert"}}
 	
 				  {{> afQuickField name='title' class='title'}}
 				  {{> afQuickField name='description' class='description'}}
-				  <input type="file" class="file_bag">
-				  {{#each files}}
+				  <input type="file" class="file_sessioncontent sessioncontent" id="sessioncontent" name="sessioncontent" />  
+				 <!--  {{#each files}}
 			        <p>{{percent_uploaded}}</p>
-			    {{/each}}		
+			    {{/each}}	 -->	
 				 <div style="text-align:center;"><button type="submit" class="btn btn-lg btn-success upload" >Create Content</button></div>
 		
     {{/autoForm}}
