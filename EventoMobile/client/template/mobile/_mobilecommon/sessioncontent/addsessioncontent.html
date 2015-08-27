@@ -1,2 +1,30 @@
 <template name="addsessioncontent">
+	{{#contentFor "headerTitle"}}
+	<div class="row">
+		<div>
+			<img src="../img/logo.jpg" height="20px" width="20px" class="img-responsive" style="margin-left: 40px;">
+		</div>
+		<div >
+			<h1 class="title">Add Session Contents</h1>
+		</div>
+	</div>
+	{{/contentFor}}
+
+	{{#ionView}}
+	{{#ionContent}}
+	 {{#autoForm  collection="SessionContents" id="addsessioncontent" }}
+	
+				  {{> afQuickField name='title' class='title'}}
+				  {{> afQuickField name='description' class='description'}}
+				  <input type="file" class="file_bag">
+				  {{#each files}}
+			        <p>{{percent_uploaded}}</p>
+			    {{/each}}		
+				 <div style="text-align:center;"><button type="submit" class="btn btn-lg btn-success upload" >Create Content</button></div>
+		
+    {{/autoForm}}
+
+    
+	{{/ionContent}}
+	{{/ionView}}
 </template>

@@ -1,7 +1,7 @@
 <template name="sessioncontentlist">
 
 	{{#contentFor "headerTitle"}}
-	<h1 class="title">session Contents</h1>
+	<h1 class="title">Session Contents</h1>
 	{{/contentFor}}
 
 {{#contentFor "headerButtonRight"}}
@@ -26,10 +26,9 @@
 <template name="sessioncontentitems"> 
      <div id={{_id}} class="sessioncontentitem">
     {{#ionItem buttonRight=true avatar=true class="item-icon-right "}}
-            <img src="./img/attendee1.jpg">
-            {{title}} 
-            {{originalname}}
-            {{filesize}}
+               <img src="../attachment.png">
+            {{title}}            
+            {{ filesizeinmb filesize}}
             {{> ionIcon icon="ios-arrow-forward" class="positive"}}
           {{/ionItem}}
           </div>   

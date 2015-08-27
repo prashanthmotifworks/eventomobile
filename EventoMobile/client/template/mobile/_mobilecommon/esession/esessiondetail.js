@@ -10,7 +10,7 @@ Template.esessiondetail.helpers({
     getSpeakerInfo :function(speakerid){
     	return Speakers.findOne({_id:speakerid}).email;
     },
-     getSessionContentCount :function(speakerid){
+     getSessionContentCount :function(){
         return SessionContents.find({sessionid:Session.get('SessionId')}).length;
     }
 
@@ -28,6 +28,10 @@ Template.esessiondetail.events = {
        var sessionid= e.currentTarget.id;
         Router.go('sessioncontentlist',{},{query: 'device='+ Session.get('device')}); 
      },
+
+
+
+
 
      
 

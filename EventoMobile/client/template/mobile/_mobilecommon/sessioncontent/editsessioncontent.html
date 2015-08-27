@@ -1,18 +1,18 @@
-<template name="editeventcontent">
-	{{#contentFor "headerTitle"}}
+<template name="editsessioncontent">
+		{{#contentFor "headerTitle"}}
 	<div class="row">
 		<div>
 			<img src="../img/logo.jpg" height="20px" width="20px" class="img-responsive" style="margin-left: 40px;">
 		</div>
 		<div >
-			<h1 class="title">Edit Event Content</h1>
+			<h1 class="title">Edit	Session Content</h1>
 		</div>
 	</div>
 	{{/contentFor}}
 
 	{{#ionView}}
 	{{#ionContent}}
- {{> quickForm collection="EventContents" id="editeventcontent" type="update" doc=this		}}
+ {{> quickForm collection="SessionContents" id="editsessioncontent" type="update" doc=this		}}
 
  {{/ionContent}}
 {{/ionView}}

@@ -1,4 +1,4 @@
-var currentfileupload;
+
 
 
 
@@ -13,17 +13,17 @@ var content1 = {
     fileextension:fileobj.file.type,
     filesize:fileobj.file.size,
     path:fileobj.url,    
-    eventid:Session.get('EventoId')
+    sessionid:Session.get('SessionId')
 };
 
-  var eventcontentid=EventContents.insert(content1, function insert(e){
+  var sessioncontentid=SessionContents.insert(content1, function insert(e){
 
    });
 
-  Session.setPersistent('EventContentId',eventcontentid);
+  Session.setPersistent('SessionContentId',sessioncontentid);
 }
 
-Template.addeventcontent.events({
+Template.addsessioncontent.events({
     "click button.upload": function(e){
         var files = $("input.file_bag")[0].files
 
@@ -48,7 +48,7 @@ Template.addeventcontent.events({
     }
 })
 
-Template.addeventcontent.helpers({
+Template.addsessioncontent.helpers({
     "files": function(){
         return S3.collection.find();
     }

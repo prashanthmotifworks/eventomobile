@@ -26,7 +26,22 @@ Template.iphone.events({
 	'click [data-action=addspeaker]': function(e, t) {
 		var nextscreen= e.currentTarget.id;
 		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')}); 
+	},
+
+	'click [data-action=editsession]': function(e, t) {
+		var nextscreen= e.currentTarget.id;
+		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')}); 
+	},
+	'click [data-action=addesessioncontent]': function(e, t) {
+		var nextscreen= e.currentTarget.id;
+		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')}); 
+	},
+	'click [data-action=editsessioncontent]': function(e, t) {
+		var nextscreen= e.currentTarget.id;
+		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')+'&_id='+Session.get('SessionContentId')}); 
 	}
+
+	
 
 });
 

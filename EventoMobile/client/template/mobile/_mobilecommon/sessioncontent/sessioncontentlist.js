@@ -1,7 +1,7 @@
 
 Template.sessioncontentlist.helpers({
 	getsessioncontents: function(){   
-       return SessionContents.find({'sessionid':Session.get('EventoId')});
+       return SessionContents.find({'sessionid':Session.get('SessionId')});
    }
 })	;
 
@@ -16,9 +16,9 @@ Template.sessioncontentlist.events = {
 
 
 Template.sessioncontentitems.events = {
-	'click .eventcontentitem': function(e,t){	
+	'click .sessioncontentitem': function(e,t){	
 	   var eventcontentId= e.currentTarget.id;
-       Session.setPersistent('EventContentId', eventcontentId);
+       Session.setPersistent('SessionContentId', eventcontentId);
 	   Router.go('sessioncontentdetail',{},{query: 'device='+ Session.get('device')}); 
 	 }
 

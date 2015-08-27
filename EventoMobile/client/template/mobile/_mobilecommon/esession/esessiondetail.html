@@ -2,13 +2,13 @@
 	{{#contentFor "headerTitle"}}
   <h1 class="title">Session Info 	
   </h1>
-
-
-
-
-  
-  
   {{/contentFor}}
+
+ 
+   {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear editsession" data-action="editsession"  id="editsession">Edit</button>
+   {{/contentFor}}
+
 
   {{#ionView}}
     {{#ionContent class="padding contact-detail"}}
@@ -18,9 +18,9 @@
           <div class="item item-avatar">
             <img src="../img/attendee1.jpg">
             <h2>{{title}} </h2>
-             <button id={{_id}} class="button icon ion-gear-a editsession"></button>
+            <!--  <button id={{_id}} class="button icon ion-gear-a editsession"></button> -->
             <br/>
-            <button class="button icon  sessioncontents" >Contents {{getSessionContentCount}}</button>
+            
             
             
           </div>
@@ -47,6 +47,8 @@
               {{/each}}
             
           </div>
+
+          <button class="button icon  sessioncontentlist" >Contents {{getSessionContentCount}}</button>
 
           <!-- <div class="item tabs tabs-secondary tabs-icon-left">
             <a class="tab-item" href="#" data-action="fake">

@@ -1,0 +1,27 @@
+<template name="sessioncontentdetail">
+
+	{{#contentFor "headerTitle"}}
+	<h1 class="title">File Info</h1>
+	{{/contentFor}}
+
+{{#contentFor "headerButtonRight"}}
+    <button class="button button-clear editsessioncontent" data-action="editsessioncontent"  id="editsessioncontent">Edit</button>
+
+   <!--  <button id={{_id}} class="button icon  editsessioncontent">Edit</button> -->
+   {{/contentFor}}
+
+
+
+	{{#ionView}}
+	{{#ionContent}}
+
+
+	{{#each filedetail}}
+	   
+       {{> fileinfo}}
+    {{/each}}
+
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

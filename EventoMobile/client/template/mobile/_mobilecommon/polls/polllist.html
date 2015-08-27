@@ -21,18 +21,12 @@
 
 <template name="pollitems">
 
-
-	<!-- <a class="item item-avatar pollitem" id={{_id}}  >
-		<img src="../img/attendee1.jpg">
-		<h2 class="textleft">{{title}}</h2>		
-		{{> ionIcon icon="ios-arrow-forward" class="positive"}}
-	</a> -->
 <div id={{_id}} class="pollitemclick">
 	 {{#ionItem buttonRight=true avatar=true class="item-icon-right"}}
             <img src="../question.jpg">
             {{title}} 
             {{> ionIcon icon="ios-arrow-forward" class="positive"}}
-          {{/ionItem}}
+      {{/ionItem}}
 
 </div>
 </template>

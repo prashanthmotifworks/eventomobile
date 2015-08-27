@@ -14,7 +14,32 @@
 
 	{{#ionView}}
 	{{#ionContent}}
-			{{> quickForm collection="PollAnswers" id="pollanswer" type="insert"}}
+	<br/>
+     {{#with getpollinfo}}
+      <!--   <div class="list card">  -->
+           
+          <div class="item item-body">
+              <h2><b>{{title}}</b> </h2>  
+            {{#if isNotUndefined optiona}}  
+           		 <p><input type="radio" name="poll" id="A" />{{ optiona}}</p>
+            {{/if}} 
+              {{#if isNotUndefined optionb}}  
+            <p><input type="radio" name="poll" id="B" />{{ optionb}}</p>
+              {{/if}} 
+              {{#if isNotUndefined optionc}}  
+            <p><input type="radio" name="poll" id="C" />{{ optionc}}</p>
+              {{/if}} 
+              {{#if isNotUndefined optiond}}  
+            <p><input type="radio" name="poll" id="D" />{{ optiond}}</p>
+              {{/if}} 
+              {{#if isNotUndefined optione}}  
+            <p><input type="radio" name="poll" id="E" />{{ optione}}</p>
+              {{/if}} 
+            <p>Comments: <input type="text" name="comment" id="comment"/></p>            
+          </div>
+           <button class="btn btn-primary" id="savepollanswer"> Submit Answer</button>        
+      <!--   </div> -->
+        {{/with}}
 	{{/ionContent}}
 	{{/ionView}}
 </template>

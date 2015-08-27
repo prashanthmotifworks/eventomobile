@@ -18,7 +18,7 @@ Template.pollitems.events = {
 	'click .pollitemclick': function(e,t){	
 	   var pollid= e.currentTarget.id;
        Session.setPersistent('PollId', pollid);
-	   Router.go('polldetail',{},{query: 'device='+ Session.get('device')}); 
+	   Router.go('pollanswer',{},{query: 'device='+ Session.get('device')}); 
 	 }
 
 };

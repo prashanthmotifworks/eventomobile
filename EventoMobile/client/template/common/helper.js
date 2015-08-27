@@ -22,3 +22,10 @@ Template.registerHelper("prettifyDate", function(timestamp) {
     result = curr_date + "/" + curr_month + "/" + curr_year;
     return result;
 });
+
+
+Template.registerHelper("filesizeinmb", function(filesize) {
+   return parseInt(filesize/1000000)+"MB";
+});
+
+ 

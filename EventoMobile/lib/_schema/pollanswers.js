@@ -7,13 +7,16 @@ PollAnswer = new SimpleSchema({
 	 			 																														afFormGroup: {label: false }}},
 	 			 userid:          { type: String,     label: "UserId",         max: 200,    optional: true, autoform: { afFieldInput: {type: "hidden" }, 
 	 			 																														afFormGroup: {label: false }}},
-	 			 pollid :         { type: String,     label: "pollid",         max: 200,   optional: true },                 
+	 			 pollid :         { type: String,     label: "pollid",         max: 200,   optional: true },      
+
                  optiona:         { type: String,     label: "Option A",       max: 200,   optional: true  },
                  optionb:         { type: String,     label: "Option B",       max: 200,   optional: true  },
                  optionc:         { type: String,     label: "Option C",       max: 200,   optional: true },
                  optiond:         { type: String,     label: "Option D",       max: 200,   optional: true },
                  optione:         { type: String,     label: "Option E",       max: 200,   optional: true },
-				 comment:         { type: String,     label: "Comment",        max: 200,   optional: true }
+ 				 comment:         { type: String,     label: "Comment",        max: 200,   optional: true }
+                 // options:         { type: String,optional: true }
+				
 
                  
 	

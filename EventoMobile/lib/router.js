@@ -31,19 +31,19 @@ Router.map(function() {
 // });
 
 
-Router.route('menulist',
- function() {
-  this.render('menulist');   
-  if(this.params.query.device!==undefined)
-  {
-   this.layout(this.params.query.device);
- }
- else
- {  
-   this.layout('layout');
- }  
-}
-);
+// Router.route('menulist',
+//  function() {
+//   this.render('menulist');   
+//   if(this.params.query.device!==undefined)
+//   {
+//    this.layout(this.params.query.device);
+//  }
+//  else
+//  {  
+//    this.layout('layout');
+//  }  
+// }
+// );
 
 
 
@@ -329,18 +329,18 @@ Router.route('addeventcontent', function() {
 }
 );
 
-Router.route('sessioncontentlist', function() {
- this.render('sessioncontentlist');
- if(this.params.query.device!==undefined)
- {
-   this.layout(this.params.query.device);
- }
- else
- { 
-  this.layout('layout');
-}
-}
-);
+// Router.route('sessioncontentlist', function() {
+//  this.render('sessioncontentlist');
+//  if(this.params.query.device!==undefined)
+//  {
+//    this.layout(this.params.query.device);
+//  }
+//  else
+//  { 
+//   this.layout('layout');
+// }
+// }
+// );
 
 Router.route('eventcontentdetail', function() {
  this.render('eventcontentdetail');
@@ -478,6 +478,57 @@ Router.route('menulist',
         
     });
 
+Router.route('addsessioncontent', 
+{      
+        path : 'addsessioncontent',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+    });
+
+Router.route('sessioncontentlist', 
+{      
+        path : 'sessioncontentlist',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+    });
+
+Router.route('editsession', 
+{      
+        path : 'editsession',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+    });
+
+Router.route('sessioncontentdetail', 
+{      
+        path : 'sessioncontentdetail',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+    });
+
+
+
+Router.route('editsessioncontent', 
+{      
+        path : 'editsessioncontent',       
+        layoutTemplate: function() {
+          return Session.get('device')==undefined ? 'layout': Session.get('device');
+         // return this.params.query.device ==undefined?'layout':this.params.query.device;
+        },
+        data : function() {
+           //
+            return SessionContents.findOne({_id:this.params.query._id});
+        }
+        
+    });
 
 
 

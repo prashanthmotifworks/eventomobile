@@ -6,7 +6,7 @@
 
   {{#ionView}}
     {{#ionContent class="padding contact-detail"}}
-      {{# each getPollInfo}}
+     <!--  {{#with getPollInfo}}
         <div class="list card">
           <form>
           <div class="item item-avatar">
@@ -18,13 +18,8 @@
 
           <div class="item item-body">          
 
-            <h4>Options :</h4>
-           <!--  {{#if isNotUndefined  optiona}} -->
-               <p><input type="radio" name="poll" id="A" />{{ optiona}}</p>
-          <!--   {{/if}} -->
-
-            
-
+            <h4>Options :</h4>           
+            <p><input type="radio" name="poll" id="A" />{{ optiona}}</p>
             <p><input type="radio" name="poll" id="B" />{{ optionb}}</p>
             <p><input type="radio" name="poll" id="C" />{{ optionc}}</p>
             <p><input type="radio" name="poll" id="D" />{{ optiond}}</p>
@@ -35,8 +30,9 @@
            <button type="submit" class="btn btn-primary" id="savepollanswer"> Submit</button>
          </form>
         </div>
-        {{/each}}
-     
+        {{/with}}
+      -->
+      
     {{/ionContent}}
   {{/ionView}}
 </template>

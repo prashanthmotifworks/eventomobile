@@ -38,6 +38,18 @@ EventContents.after.update(function(userId, doc) {
 window.location.replace('/eventcontentlist?device='+Session.get('device'));
 });
 
+//=================================SessionContents=========================
+
+SessionContents.after.insert(function(userId, doc) {	
+//	Router.go('esessionlist',{},{query: 'device='+ Session.get('device')}); 
+window.location.replace('/sessioncontentlist?device='+Session.get('device'));
+});
+
+
+SessionContents.after.update(function(userId, doc) {	
+//	Router.go('esessionlist',{},{query: 'device='+ Session.get('device')}); 
+window.location.replace('/sessioncontentlist?device='+Session.get('device'));
+});
 
 //=============================================SPEAKERS==========================
 
@@ -111,10 +123,15 @@ Polls.before.insert(function(userId, doc) {
 	doc.sessionid=Session.get('SessionId');	
 });
 
+Polls.after.insert(function(userId, doc) {
+window.location.replace('/polllist?device='+Session.get('device'));
+});
+
+
 PollAnswers.before.insert(function(userId, doc) {
-	// doc.eventid=Session.get('EventoId');
-	// doc.sessionid=Session.get('SessionId');	
-	// doc.pollid=Session.get('PollId');	
+	doc.eventid=Session.get('EventoId');
+	doc.sessionid=Session.get('SessionId');	
+	doc.pollid=Session.get('PollId');	
 });
 
 PollAnswers.after.insert(function(userId, doc) {

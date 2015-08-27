@@ -2,7 +2,7 @@ EventContents = new Mongo.Collection('eventcontents');
 EventContent  = new SimpleSchema({
                  eventid:         { type: String,     label: "SessionId",      max: 200, optional: true, autoform: { afFieldInput: {type: "hidden" }, 
                                                                                                         afFormGroup: {label: false }}},            
-                 title:           { type: String,     label: "Title",          max: 200, optional: true, },
+                 title:           { type: String,     label: "Title",          max: 200, optional: true},
                 
                  description:     { type: String,     label: "Description",    max: 200, optional: true },
                  originalname:    { type: String,     label: "FileName",       max: 200, optional: true, autoform: { type: "hidden" }},   
