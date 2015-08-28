@@ -1,9 +1,16 @@
 <template name="eventdetail">
 	{{#contentFor "headerTitle"}}
-  <h1 class="title">Event Info 
-  </h1>
+  <button class="button button-clear backmenulist" data-action="backmenulist"  id="menulist"><img src="../back.png" class="backimg"></button>  
+  <h1 class="title">Event Info </h1>
   
   {{/contentFor}}
+
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear editevent" data-action="editevent"  id="editevent"><img src="../edit.png" ></button>
+    <button class="button button-clear deleteevent" data-action="deleteevent"  id="eventlist"><img src="../delete.png" ></button>
+   {{/contentFor}}
+
 
   {{#ionView}}
     {{#ionContent class="padding contact-detail"}}
@@ -12,7 +19,7 @@
 
           <div class="item item-avatar">
             <img src="../img/attendee1.jpg">
-            <button id={{_id}} class=" icon ion-gear-a editevent"></button>
+          <!--   <button id={{_id}} class=" icon ion-gear-a editevent"></button> -->
             <h2>{{title}} </h2>
             <p>{{venuename}}</p>
           </div>

@@ -1,12 +1,13 @@
 <template name="sessioncontentdetail">
 
 	{{#contentFor "headerTitle"}}
-	<h1 class="title">File Info</h1>
+	<button class="button button-clear  backmenulist" data-action="backmenulist"  id="sessioncontentlist"><img src="../back.png" class="backimg"></button> 
+	<h1 class="title">Info</h1>
 	{{/contentFor}}
 
 {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear editsessioncontent" data-action="editsessioncontent"  id="editsessioncontent">Edit</button>
-    <button class="button button-clear deletesessioncontent" data-action="deletesessioncontent"  id="sessioncontentlist">Delete</button>
+    <button class="button button-clear editsessioncontent" data-action="editsessioncontent"  id="editsessioncontent"><img src="../delete.png" ></button>
+    <button class="button button-clear deletesessioncontent" data-action="deletesessioncontent"  id="sessioncontentlist"><img src="../delete.png"></button>
    {{/contentFor}}
 
 

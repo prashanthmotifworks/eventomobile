@@ -1,13 +1,14 @@
 <template name="eventcontentdetail">
 
 	{{#contentFor "headerTitle"}}
+	<button class="button button-clear  backmenulist" data-action="backmenulist"  id="eventcontentlist"><img src="../back.png" class="backimg"></button> 
 	<h1 class="title">Event Content</h1>
 	{{/contentFor}}
 
 
 	{{#contentFor "headerButtonRight"}}
-    <button class="button button-clear editeventcontent" data-action="editeventcontent"  id="editeventcontent">Edit</button>
-    <button class="button button-clear deleteeventcontent" data-action="deleteeventcontent"  id="eventcontentlist">Delete</button>
+    <button class="button button-clear editeventcontent" data-action="editeventcontent"  id="editeventcontent"><img src="../edit.png" ></button>
+    <button class="button button-clear deleteeventcontent" data-action="deleteeventcontent"  id="eventcontentlist"><img src="../delete.png"></button>
    {{/contentFor}}
 
 
@@ -19,7 +20,7 @@
 
 
 	{{#each filedetail}}
-	   <button id={{_id}} class="button icon ion-gear-a editeventcontent"></button>
+	<!--    <button id={{_id}} class="button icon ion-gear-a editeventcontent"></button> -->
        {{> fileinfo}}
     {{/each}}
 

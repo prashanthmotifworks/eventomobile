@@ -1,12 +1,13 @@
 <template name="attendeelist">
 
 	{{#contentFor "headerTitle"}}
+	<button class="button button-clear  backmenulist" data-action="backmenulist"  id="menulist"><img src="../back.png" class="backimg"></button> 
 	<h1 class="title">Attendees</h1>
 	{{/contentFor}}
 
 
 {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear addattendee" data-action="addattendee"   id="addattendee">{{> ionIcon icon="ios-plus-empty"}}</button>
+   <!--  <button class="button button-clear addattendee" data-action="addattendee"   id="addattendee">{{> ionIcon icon="ios-plus-empty"}}</button> -->
    {{/contentFor}}
 
 	{{#ionView}}

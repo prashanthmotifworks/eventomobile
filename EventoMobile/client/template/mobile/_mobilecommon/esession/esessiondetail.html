@@ -1,12 +1,15 @@
 <template name="esessiondetail">
 	{{#contentFor "headerTitle"}}
+  <button class="button button-clear  backmenulist" data-action="backmenulist"  id="esessionlist"><img src="../back.png" class="backimg"></button> 
   <h1 class="title">Session Info 	
   </h1>
   {{/contentFor}}
 
  
    {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear editsession" data-action="editsession"  id="editsession">Edit</button>
+   <!--  <button class="button button-clear editesession" data-action="editesession"  id="editesession">Edit</button> -->
+    <button class="button button-clear editesession" data-action="editesession"  id="editesession"><img src="../edit.png" ></button>
+    <button class="button button-clear deleteesession" data-action="deleteesession"  id="esessionlist"><img src="../delete.png" ></button>
    {{/contentFor}}
 
 

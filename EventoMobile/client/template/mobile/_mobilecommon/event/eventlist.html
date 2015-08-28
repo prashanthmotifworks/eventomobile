@@ -1,8 +1,14 @@
  <template name="eventlist">
 
 	{{#contentFor "headerTitle"}}
+	  <button class="button button-clear backmenulist" data-action="backmenulist"  id="home"><img src="../back.png" class="backimg"></button>  
 	<h1 class="title">Events</h1>
 	{{/contentFor}}
+
+
+	<!-- {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear backmenulist" data-action="backmenulist"  id="home">{{> ionIcon icon="ion-ios7-arrow-back"}}</button>  
+   {{/contentFor}} -->
 
    {{#contentFor "headerButtonRight"}}
     <button class="button button-clear addevent" id="addevent"  data-action="addevent">{{> ionIcon icon="ios-plus-empty"}}</button>
@@ -24,7 +30,7 @@
 	<template name="eventitems">  
 		<div id={{_id}} class="eventitem">
 			{{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right " }}           
-			<img src="../img/attendee1.jpg">
+			<img src="../evento1.png" height="35px" width="35px">
 			{{title}}          
 			{{> ionIcon icon="ios-arrow-forward" class="positive"}}       
 			{{/ionItem}}

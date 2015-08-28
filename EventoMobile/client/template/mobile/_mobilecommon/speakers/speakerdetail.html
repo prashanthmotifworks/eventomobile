@@ -1,9 +1,20 @@
 <template name="speakerdetail">
+
+   {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear backmenulist" data-action="backmenulist"  id="speakerlist"><img src="../back.png" class="backimg"></button>  
+    {{/contentFor}}
+
+
 	  {{#contentFor "headerTitle"}}
-  <h1 class="title">Speaker Info 
-  </h1>
-  
+    
+  <h1 class="title">Details </h1>  
   {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear editspeaker" data-action="editspeaker"  id="editspeaker"><img src="../edit.png" ></button>
+    <button class="button button-clear deletespeaker" data-action="deletespeaker"  id="speakerlist"><img src="../delete.png" ></button>
+   {{/contentFor}}
+
 
   {{#ionView}}
     {{#ionContent class="padding contact-detail"}}
@@ -13,7 +24,7 @@
           <div class="item item-avatar">
             <img src={{profilepath}}>
             <h2>{{fname}} {{lname}}</h2>
-             <button id={{_id}} class="button icon ion-gear-a editspeaker"></button>            
+            <!--  <button id={{_id}} class="button icon ion-gear-a editspeaker"></button>        -->     
             <p>{{designation}}, {{department}}</p>
           </div>
 

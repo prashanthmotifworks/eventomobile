@@ -1,18 +1,19 @@
-<template name="editeSession">
+<template name="editesession">
 	{{#contentFor "headerTitle"}}
-	<div class="row">
+	<!-- <div class="row">
 		<div>
 			<img src="../img/logo.jpg" height="20px" width="20px" class="img-responsive" style="margin-left: 40px;">
 		</div>
-		<div >
+		<div > -->
+			<button class="button button-clear  backmenulist" data-action="backmenulist"  id="esessiondetail"><img src="../back.png" class="backimg"></button> 
 			<h1 class="title">Edit	 Sessions</h1>
-		</div>
-	</div>
+		<!-- </div>
+	</div> -->
 	{{/contentFor}}
 
 	{{#ionView}}
 	{{#ionContent}}
- {{> quickForm collection="eSessions" id="editeSession" type="update" doc=this		}}
+ {{> quickForm collection="eSessions" id="editesession" type="update" doc=this		}}
  {{/ionContent}}
 {{/ionView}}
 </template>

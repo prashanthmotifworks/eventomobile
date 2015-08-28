@@ -267,9 +267,9 @@ Router.route('esessiondetail', function() {
         
 //     });
 
-Router.route('editeSession', 
+Router.route('editesession', 
 {      
-        path : 'editeSession',       
+        path : 'editesession',       
         layoutTemplate: function() {
            return Session.get('device')==undefined ? 'layout': Session.get('device');
          // return this.params.query.device ==undefined?'layout':this.params.query.device;

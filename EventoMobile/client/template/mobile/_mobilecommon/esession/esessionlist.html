@@ -1,10 +1,17 @@
 <template name="esessionlist">
 
 	{{#contentFor "headerTitle"}}
+	<button class="button button-clear  backmenulist" data-action="backmenulist"  id="menulist"><img src="../back.png" class="backimg"></button> 
 	<h1 class="title">Sessions</h1>
 	{{/contentFor}}
 
-{{#contentFor "headerButtonRight"}}
+
+	<!-- {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear backmenulist" data-action="backmenulist"  id="menulist">{{> ionIcon icon="ion-ios7-arrow-back"}}</button>  
+   {{/contentFor}} -->
+
+
+{{#contentFor "headerButtonRight"}}    
     <button class="button button-clear addesession" data-action="addesession"  id="addesession">{{> ionIcon icon="ios-plus-empty"}}</button>
    {{/contentFor}}
 	

@@ -6,7 +6,7 @@ Eventos.after.insert(function(userId, doc) {
 });
 Eventos.after.update(function(userId, doc) {	
 	//Router.go('eventlist',{},{query: 'device='+ Session.get('device')}); 
-		window.location.replace('/eventlist?device='+Session.get('device'));
+		window.location.replace('/eventdetail?device='+Session.get('device'));
 });
 
 
@@ -24,7 +24,7 @@ eSessions.after.insert(function(userId, doc) {
 
 eSessions.after.update(function(userId, doc) {	
 //	Router.go('esessionlist',{},{query: 'device='+ Session.get('device')}); 
-window.location.replace('/esessionlist?device='+Session.get('device'));
+window.location.replace('/esessiondetail?device='+Session.get('device'));
 });
 
 //=============================================EventContent==========================
@@ -54,7 +54,7 @@ EventContents.after.insert(function(userId, doc) {
 
 EventContents.after.update(function(userId, doc) {	
 //	Router.go('esessionlist',{},{query: 'device='+ Session.get('device')}); 
-window.location.replace('/eventcontentlist?device='+Session.get('device'));
+window.location.replace('/eventcontentdetail?device='+Session.get('device'));
 });
 
 //=================================SessionContents=========================
@@ -78,14 +78,14 @@ S3.upload({files:files,path:"Evento"},
 
 				});
 
-Router.go('sessioncontentlist',{},{query: 'device='+ Session.get('device')}); 
+//Router.go('sessioncontentlist',{},{query: 'device='+ Session.get('device')}); 
 //window.location.replace('/sessioncontentlist?device='+Session.get('device'));
 });
 
 
 SessionContents.after.update(function(userId, doc) {	
 //	Router.go('esessionlist',{},{query: 'device='+ Session.get('device')}); 
-window.location.replace('/sessioncontentlist?device='+Session.get('device'));
+window.location.replace('/sessioncontentdetail?device='+Session.get('device'));
 });
 
 //=============================================SPEAKERS==========================
@@ -116,7 +116,7 @@ Speakers.after.insert(function(userId, doc) {
 
 Speakers.after.update(function(userId, doc) {	
 //	Router.go('esessionlist',{},{query: 'device='+ Session.get('device')}); 
-window.location.replace('/speakerlist?device='+Session.get('device'));
+window.location.replace('/speakerdetail?device='+Session.get('device'));
 });
 //===========================================Attendee
 
@@ -150,7 +150,7 @@ Attendees.after.insert(function(userId, doc) {
 
 Attendees.after.update(function(userId, doc) {	
 //	Router.go('esessionlist',{},{query: 'device='+ Session.get('device')}); 
-window.location.replace('/attendeelist?device='+Session.get('device'));
+window.location.replace('/attendeedetail?device='+Session.get('device'));
 });
 
 //==============================

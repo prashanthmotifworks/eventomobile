@@ -87,3 +87,8 @@ body
     z-index: 3 !important;
     margin-left: 260px;
   }
+
+  .backimg
+  {
+    width: 50%;
+  }

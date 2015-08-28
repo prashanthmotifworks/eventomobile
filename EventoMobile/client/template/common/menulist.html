@@ -2,39 +2,72 @@
 
 
 	{{#contentFor "headerTitle"}}
+	<!-- <button class="button ion-arrow-back button-clear backmenulist" data-action="backmenulist"  id="home"><img src="../Home_E.png"></button>   -->
+	<button class="button button-clear  backmenulist" data-action="backmenulist"  id="home"><img src="../back.png" class="backimg"></button>  
 	<h1 class="title">Menu</h1>
+
 	{{/contentFor}}
+
+
+
 
 	{{#ionView}}
 	{{#ionContent}}
 
 	<div style="padding-top:25px;">
 		<div class="col-xs-12" style="margin:10px;margin-left:0px">	
-			<div class="col-sm-4"><a class="menuitem" id="eventdetail"><img src="../EventsIcon.png" class="imageborder img-responsive"></a>	</div>
-			<div class="col-sm-4"><a class="menuitem" id="eventdetail"><img src="../LogisticsIcon.png" class="imageborder img-responsive"></a>	</div>
-			<div class="col-sm-4"><a class="menuitem"><img src="../SponsorsIcon.png" class="imageborder img-responsive"></a>	</div>		
+			<div class="col-sm-4" style="text-align:center;">
+				<a class="menuitem" id="eventdetail">
+					<img src="../EventsIcon.png" class="imageborder img-responsive">
+					<span style="font-size:10pt; font-style: italic;">info</span>
+
+			</a>	</div>
+			<div class="col-sm-4" style="text-align:center;"><a class="menuitem" id="eventdetail"><img src="../LogisticsIcon.png" class="imageborder img-responsive">
+                   <span style="font-size:10pt; font-style: italic;">logistic</span>
+			</a>	</div>
+			<div class="col-sm-4" style="text-align:center;"><a class="menuitem"><img src="../SponsorsIcon.png" class="imageborder img-responsive">
+                     <span style="font-size:10pt; font-style: italic;">sponsers</span>
+			</a>	</div>		
 			
   </div>
       <div class="col-xs-12" style="margin:10px;margin-left:0px">	
-		<div class="col-sm-4"><a class="menuitem" id="esessionlist"><img src="../Dash_Board_new.png" class="imageborder img-responsive"></a></div>
-		<div class="col-sm-4"><a class="menuitem" id="speakerlist"><img src="../speakers_new.png"  class="imageborder img-responsive"></a></div>
-		<div class="col-sm-4"><a class="menuitem" id="attendeelist"><img src="../attendeeIcon.png" class="imageborder img-responsive"></a>	</div>
+		<div class="col-sm-4" style="text-align:center;"><a class="menuitem" id="esessionlist"><img src="../Dash_Board_new.png" class="imageborder img-responsive">
+          <span style="font-size:10pt; font-style: italic;">sessions</span>
+		</a></div>
+		<div class="col-sm-4" style="text-align:center;"><a class="menuitem" id="speakerlist"><img src="../speakers_new.png"  class="imageborder img-responsive">
+			<span style="font-size:10pt; font-style: italic;">speakers</span>
+		</a></div>
+		<div class="col-sm-4" style="text-align:center;"><a class="menuitem" id="attendeelist"><img src="../attendeeIcon.png" class="imageborder img-responsive">
+<span style="font-size:10pt; font-style: italic;">attendees</span>
+		</a>	</div>
 			
 		</div>
 		<br/>
 
 		<div class="col-sm-12" style="margin:10px;margin-left:0px">		
-			<div class="col-sm-4"><a class="menuitem" id="eventcontentlist"><img src="../contents_new.png" class="imageborder img-responsive"></a></div>
-			<div class="col-sm-4"><a class="menuitem" id="polllist"><img src="../polls_new.png" class="imageborder img-responsive"></a></div>
-			<div class="col-sm-4"><a class="menuitem" ><img src="../img/icons/pollanswer_new.png" class="imageborder img-responsive"></a></div>
+			<div class="col-sm-4" style="text-align:center;"><a class="menuitem" id="eventcontentlist"><img src="../contents_new.png" class="imageborder img-responsive">
+						<span style="font-size:10pt; font-style: italic;">contents</span>
+			</a></div>
+			<div class="col-sm-4" style="text-align:center;"><a class="menuitem" id="polllist"><img src="../polls_new.png" class="imageborder img-responsive">
+                  <span style="font-size:10pt; font-style: italic;">polls</span>
+			</a></div>
+			<div class="col-sm-4" style="text-align:center;"><a class="menuitem" ><img src="../img/icons/pollanswer_new.png" class="imageborder img-responsive">
+						<span style="font-size:10pt; font-style: italic;">q & a</span>
+			</a></div>
 			
 
 		</div>
 		<br/>
 		<div class="col-sm-12" style="margin:10px;margin-left:0px">		
-			<div class="col-sm-4"><a class="menuitem" d="esessionlist"><img src="../img/icons/clock_icon_new.png" class="imageborder img-responsive"></a>	</div>
-			<div class="col-sm-4"><a class="menuitem"><img src="../img/icons/venuenew.png" class="imageborder img-responsive"></a></div>			
-			<div class="col-sm-4"><a class="menuitem" ><img src="../img/icons/sessionnew.png" class="imageborder img-responsive"></a>	</div>
+			<div class="col-sm-4" style="text-align:center;"><a class="menuitem" d="esessionlist"><img src="../img/icons/clock_icon_new.png" class="imageborder img-responsive">
+<span style="font-size:10pt; font-style: italic;">schedule</span>
+			</a>	</div>
+			<div class="col-sm-4" style="text-align:center;"><a class="menuitem"><img src="../img/icons/venuenew.png" class="imageborder img-responsive">
+<span style="font-size:10pt; font-style: italic;">venue</span>
+			</a></div>			
+			<div class="col-sm-4" style="text-align:center;"><a class="menuitem" ><img src="../img/icons/sessionnew.png" class="imageborder img-responsive">
+<span style="font-size:10pt; font-style: italic;">calendar</span>
+			</a>	</div>
 			
 		</div>
 		<div class="col-sm-12">		
