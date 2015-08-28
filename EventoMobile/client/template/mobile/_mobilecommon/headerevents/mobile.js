@@ -44,7 +44,7 @@ Template.mobile.events({
 	},
 	'click [data-action=editeventcontent]': function(e, t) {
 		var nextscreen= e.currentTarget.id;
-		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')+'&_id='+Session.get('SessionContentId')}); 
+		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')+'&_id='+Session.get('EVentContentId')}); 
 	},
 	'click [data-action=editevent]': function(e, t) {
 		var nextscreen= e.currentTarget.id;

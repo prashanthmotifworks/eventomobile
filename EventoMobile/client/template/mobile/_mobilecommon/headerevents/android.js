@@ -44,7 +44,7 @@ Template.android.events({
 	},
 	'click [data-action=editeventcontent]': function(e, t) {
 		var nextscreen= e.currentTarget.id;
-		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')+'&_id='+Session.get('SessionContentId')}); 
+		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')+'&_id='+Session.get('EVentContentId')}); 
 	},
 	'click [data-action=editevent]': function(e, t) {
 		var nextscreen= e.currentTarget.id;
@@ -53,6 +53,10 @@ Template.android.events({
 	'click [data-action=editspeaker]': function(e, t) {
 		var nextscreen= e.currentTarget.id;
 		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')+'&_id='+Session.get('SpeakerId')}); 
+	},
+	'click [data-action=editattendee]': function(e, t) {
+		var nextscreen= e.currentTarget.id;
+		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')+'&_id='+Session.get('AttendeeId')}); 
 	},
 
 
@@ -80,6 +84,11 @@ Template.android.events({
 	'click [data-action=deletespeaker]': function(e, t) {
 		var nextscreen= e.currentTarget.id;
 		var status= Speakers.remove({_id:Session.get('SpeakerId')});
+		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')}); 
+	},
+	'click [data-action=deleteattendee]': function(e, t) {
+		var nextscreen= e.currentTarget.id;
+		var status= Speakers.remove({_id:Session.get('AttendeeId')});
 		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')}); 
 	},
 
