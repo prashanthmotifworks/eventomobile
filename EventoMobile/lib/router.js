@@ -6,6 +6,7 @@ Router.configure({
 
 Router.map(function() {
 	this.route('home'); 
+  this.route('mobile');
 //this.route('devicehome'); 
 //this.route('menulist');
 //this.route('iphonelayout');
@@ -48,44 +49,49 @@ Router.map(function() {
 
 
 
-Router.route('speakerlist', function() {
- this.render('speakerlist');
- if(this.params.query.device!==undefined)
- {
-   this.layout(this.params.query.device);
- }
- else
- { 
-  this.layout('layout');
-}
-}
-);
+Router.route('addevent', 
+{      
+        path : 'addevent',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+});
 
-Router.route('addevent', function() {
- this.render('addevent');
- if(this.params.query.device!==undefined)
- {
-   this.layout(this.params.query.device);
- }
- else
- { 
-  this.layout('layout');
-}
-}
-);
 
-Router.route('addesession', function() {
- this.render('addesession');
- if(this.params.query.device!==undefined)
- {
-   this.layout(this.params.query.device);
- }
- else
- { 
-  this.layout('layout');
-}
-}
-);
+// Router.route('addevent', function() {
+//  this.render('addevent');
+//  if(this.params.query.device!==undefined)
+//  {
+//    this.layout(this.params.query.device);
+//  }
+//  else
+//  { 
+//   this.layout('layout');
+// }
+// }
+// );
+
+// Router.route('addesession', function() {
+//  this.render('addesession');
+//  if(this.params.query.device!==undefined)
+//  {
+//    this.layout(this.params.query.device);
+//  }
+//  else
+//  { 
+//   this.layout('layout');
+// }
+// }
+// );
+Router.route('addesession', 
+{      
+        path : 'addesession',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+});
 
 
 Router.route('addspeaker', function() {
@@ -134,6 +140,7 @@ Router.route('eventlist', function() {
  this.render('eventlist');
  if(this.params.query.device!==undefined)
  {
+   Session.setPersistent('device',this.params.query.device);
    this.layout(this.params.query.device);
  }
  else
@@ -473,6 +480,7 @@ Router.route('menulist',
 {      
         path : 'menulist',       
         layoutTemplate: function() {
+        //  Session.setPersistent('device',this.params.query.device);
            return Session.get('device')==undefined ? 'layout': Session.get('device');        
         }
         
@@ -529,6 +537,19 @@ Router.route('editsessioncontent',
         }
         
     });
+
+
+Router.route('speakerlist', 
+{      
+        path : 'speakerlist',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+});
+
+
+
 
 
 
