@@ -1,0 +1,77 @@
+<template name="sponsorlist">
+	{{#contentFor "headerButtonLeft"}}
+  <button class="button button-clear pull-left button-positive" data-ion-modal="search">
+    {{>ionNavBackButton class="button-positive" text=false}}
+  </button>
+  {{/contentFor}}
+
+   {{#contentFor "headerTitle"}}
+    <h1 class="title">Sponsors</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+  {{#ionContent}}
+
+
+  {{#each getsponsorsbyeventid}}
+       {{> sponsorsrow}}
+     {{/each}}
+
+     {{/ionContent}}
+     <div class="tabs tabs-icon-top">
+       <a class="tab-item" href="/eventbrief?EventId={{currenteventid}}">
+         <i class="icon ion-brief-a"></i>
+              <!-- Event Brief -->
+       </a>
+       <a class="tab-item" href="/contentios?EventId={{currenteventid}}">
+         <i class="icon ion-content"></i>
+              <!-- Content -->
+       </a>
+       <a class="tab-item" href="/userhome?EventId={{currenteventid}}">
+         <i class="icon ion-home"></i>
+
+       </a>
+       <a class="tab-item" href="/questionanswerios?EventId={{currenteventid}}">
+         <i class="icon ion-Q-A"></i>
+           <!-- Q & A -->
+       </a>
+       <a class="tab-item" href="/pollios?EventId={{currenteventid}}">
+         <i class="icon ion-poll"></i>
+              <!-- Poll -->
+       </a>
+     </div>
+     {{/ionView}}
+</template>
+
+
+
+<template name="sponsorsrow">
+  <div class="row sponsoes-align">
+    <div class="col">Platinum</div>
+
+  </div>
+  <div class="row sponsoes-align">
+    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
+    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
+    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
+    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
+  </div>
+  <div class="row sponsoes-align">
+    <div class="col">Gold</div>
+  </div>
+  <div class="row sponsoes-align">
+    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
+    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
+    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
+    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
+  </div>
+  <div class="row sponsoes-align">
+    <div class="col">Silver</div>
+  </div>
+  <div class="row sponsoes-align">
+    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
+    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
+    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
+    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
+  </div>
+</template>
