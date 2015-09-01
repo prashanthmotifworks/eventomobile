@@ -31,7 +31,10 @@ Template.iphone.events({
 		var nextscreen= e.currentTarget.id;
 		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')}); 
 	},
-
+	'click [data-action=addsponsors]': function(e, t) {
+		var nextscreen= e.currentTarget.id;
+		Router.go(nextscreen,{},{query: 'device='+ Session.get('device')}); 
+	},
 
 
 	'click [data-action=editesession]': function(e, t) {

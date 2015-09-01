@@ -1,77 +1,137 @@
 <template name="sponsorlist">
-	{{#contentFor "headerButtonLeft"}}
-  <button class="button button-clear pull-left button-positive" data-ion-modal="search">
-    {{>ionNavBackButton class="button-positive" text=false}}
-  </button>
-  {{/contentFor}}
-
-   {{#contentFor "headerTitle"}}
-    <h1 class="title">Sponsors</h1>
-  {{/contentFor}}
-
-  {{#ionView}}
-  {{#ionContent}}
 
 
-  {{#each getsponsorsbyeventid}}
-       {{> sponsorsrow}}
-     {{/each}}
+	{{#contentFor "headerTitle"}}
+ <button class="button button-clear backmenulist" data-action="backmenulist"  id="menulist"><img src="../back.png" class="backimg"></button>  
+ <h1 class="title">Sponsors</h1>
+ {{/contentFor}}
 
-     {{/ionContent}}
-     <div class="tabs tabs-icon-top">
-       <a class="tab-item" href="/eventbrief?EventId={{currenteventid}}">
-         <i class="icon ion-brief-a"></i>
-              <!-- Event Brief -->
-       </a>
-       <a class="tab-item" href="/contentios?EventId={{currenteventid}}">
-         <i class="icon ion-content"></i>
-              <!-- Content -->
-       </a>
-       <a class="tab-item" href="/userhome?EventId={{currenteventid}}">
-         <i class="icon ion-home"></i>
+ {{#contentFor "headerButtonRight"}}
+ <button class="button button-clear addsponsors" id="addsponsors"  data-action="addsponsors">{{> ionIcon icon="ios-plus-empty"}}</button>
+ {{/contentFor}}
 
-       </a>
-       <a class="tab-item" href="/questionanswerios?EventId={{currenteventid}}">
-         <i class="icon ion-Q-A"></i>
-           <!-- Q & A -->
-       </a>
-       <a class="tab-item" href="/pollios?EventId={{currenteventid}}">
-         <i class="icon ion-poll"></i>
-              <!-- Poll -->
-       </a>
-     </div>
-     {{/ionView}}
+ {{#ionView}}
+ {{#ionContent}}
+
+
+ <!--   {{#each getsponsorsbyeventid}} -->
+ {{> sponsorsrow}}
+ <!--   {{/each}} -->
+ {{/ionContent}}
+ {{/ionView}}
 </template>
 
 
 
 <template name="sponsorsrow">
-  <div class="row sponsoes-align">
-    <div class="col">Platinum</div>
+
+  <!-- <div class="col">Platinum</div></div> -->
+
+  <div id={{_id}} class="eventitem">
+   {{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right " }}           
+   <img src="../platinum.jpg" height="35px" width="35px">
+   Platinum
+   
+   {{/ionItem}}
+ </div>
+
+  {{#each loopCount 1}}
+  <div class="col-xs-12 col-sm-12 col-xs-12 " style="margin:10px;margin-left:0px">   
+    {{#each getplatinumsponsors}}
+    <div class="col-sm-4 col-xs-4  item-avatar" style="text-align:center;">
+      <a class="menuitem" id="eventdetail">
+        <span style="font-size:9pt; font-style: italic; text-align:center;">
+          <img src={{logo}} class=" center-block imageborder img-responsive">
+          {{title}}</span>
+        </a>  
+      </div>
+      {{/each}}     
+    </div>
+    {{/each}}
+
+
+      <div id={{_id}} class="eventitem">
+   {{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right " }}           
+   <img src="../platinum.jpg" height="35px" width="35px">
+   Platinum
+   
+   {{/ionItem}}
+ </div>
+
+  {{#each loopCount 1}}
+  <div class="col-xs-12 col-sm-12 col-xs-12 " style="margin:10px;margin-left:0px">   
+    {{#each getgoldsponsors}}
+    <div class="col-sm-4 col-xs-4  item-avatar" style="text-align:center;">
+      <a class="menuitem" id="eventdetail">
+        <span style="font-size:9pt; font-style: italic; text-align:center;">
+          <img src={{logo}} class=" center-block imageborder img-responsive">
+          {{title}}</span>
+        </a>  
+      </div>
+      {{/each}}     
+    </div>
+    {{/each}}
+
+
+      <div id={{_id}} class="eventitem">
+   {{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right " }}           
+   <img src="../platinum.jpg" height="35px" width="35px">
+   Platinum
+   
+   {{/ionItem}}
+ </div>
+
+  {{#each loopCount 1}}
+  <div class="col-xs-12 col-sm-12 col-xs-12 " style="margin:10px;margin-left:0px">   
+    {{#each getsilversponsors}}
+    <div class="col-sm-4 col-xs-4  item-avatar" style="text-align:center;">
+      <a class="menuitem" id="eventdetail">
+        <span style="font-size:9pt; font-style: italic; text-align:center;">
+          <img src={{logo}} class=" center-block imageborder img-responsive">
+          {{title}}</span>
+        </a>  
+      </div>
+      {{/each}}     
+    </div>
+    {{/each}}
+
+
+<!-- 
+    <div id={{_id}} class="eventitem">
+     {{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right " }}           
+     <img src="../gold.jpg" height="35px" width="35px">
+     Gold
+     {{> ionIcon icon="ios-arrow-forward" class="positive"}}       
+     {{/ionItem}}
+   </div>
+
+   <div class="row sponsoes-align">
+     {{#each getgoldsponsors}}
+     <div class="col col-25">
+       <img src={{logo}} width="60" height="60" class="imageborder">
+       <br/>
+       {{title}}
+     </div>
+     {{/each}}
 
   </div>
-  <div class="row sponsoes-align">
-    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
-    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
-    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
-    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
-  </div>
-  <div class="row sponsoes-align">
-    <div class="col">Gold</div>
-  </div>
-  <div class="row sponsoes-align">
-    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
-    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
-    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
-    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
-  </div>
-  <div class="row sponsoes-align">
-    <div class="col">Silver</div>
-  </div>
-  <div class="row sponsoes-align">
-    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
-    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
-    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
-    <div class="col col-25"><img src="img/53789.jpg" width="60" height="60" class="imageborder"></div>
-  </div>
+
+
+  <div id={{_id}} class="eventitem">
+   {{#ionItem path="contacts.show" buttonRight=true avatar=true class="item-icon-right " }}           
+   <img src="../silver.jpg" height="35px" width="35px">
+   Silver
+   {{> ionIcon icon="ios-arrow-forward" class="positive"}}       
+   {{/ionItem}}
+ </div>
+ <div class="row sponsoes-align">
+   {{#each getsilversponsors}}
+   <div class="col col-25">
+     <img src={{logo}} width="60" height="60" class="imageborder">
+     <br/>
+     {{title}}
+   </div>
+   {{/each}}
+ 
+  </div> -->
 </template>

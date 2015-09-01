@@ -8,11 +8,11 @@ Sponsor = new SimpleSchema({
 	    													autoform : {
 																	    options: [
 																	    	{label: "Silver", value: "silver"},
-																	    	{label: "gold", value: "Gold"},
-																	    	{label: "platinum", value: "Platinum"}
+																	    	{label: "Gold", value: "gold"},
+																	    	{label: "Platinum", value: "platinum"}
 																	    ]}},	
 
-	logo:         {type: String,      label: "Description",  max: 2000,   optional:true}	
+	logo:         {type: String,      label: "Description",  max: 2000,   optional:true}
 
 });
 

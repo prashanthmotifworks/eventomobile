@@ -6,5 +6,25 @@
 	
 	{{/contentFor}}
 
+{{#ionView}}
+	{{#ionContent}}
+<!--  {{> quickForm collection="Sponsors" id="addsponsors" type="insert" }} -->
+{{#autoForm collection="Sponsors" id="addsponsors" type="insert" template="ionic"}}
+    <fieldset>     
+      {{> afQuickField name='title'}}
+      {{> afQuickField name='description'}}
+      {{> afQuickField name='address'}}
+      {{> afQuickField name='department'}}
+      {{> afQuickField name='type'}}
 
+     
+     <!--  {{> afQuickField name='profilepath' type="file"}} -->
+
+     <input type="file" class="file_bag speakerpic" id="eventspkimg" name="profilepath"  />   
+     
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Insert</button>
+ {{/autoForm}}
+ {{/ionContent}}
+{{/ionView}}
 </template>

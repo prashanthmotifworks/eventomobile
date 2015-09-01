@@ -174,3 +174,22 @@ PollAnswers.before.insert(function(userId, doc) {
 PollAnswers.after.insert(function(userId, doc) {
 window.location.replace('/polllist?device='+Session.get('device'));
 });
+
+
+Sponsors.after.insert(function(userId, doc) {
+
+	
+
+	var files =  $("input[name='profilepath']")[0].files;
+
+				S3.upload({files:files,path:"Evento"
+				}, 
+
+				function(error, s3Url){
+
+				var status=  Sponsors.update( doc._id, { $set: { logo: s3Url.url } });
+
+				});
+
+				Router.go('sponsorlist',{},{query: 'device='+ Session.get('device')}); 
+});

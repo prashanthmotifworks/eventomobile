@@ -548,7 +548,23 @@ Router.route('speakerlist',
         
 });
 
+Router.route('sponsorlist', 
+{      
+        path : 'sponsorlist',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+});
 
+Router.route('addsponsors', 
+{      
+        path : 'addsponsors',       
+        layoutTemplate: function() {
+           return Session.get('device')==undefined ? 'layout': Session.get('device');        
+        }
+        
+});
 
 
 
